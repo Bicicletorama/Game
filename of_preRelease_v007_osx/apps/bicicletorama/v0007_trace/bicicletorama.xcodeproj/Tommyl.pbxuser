@@ -1,0 +1,155 @@
+// !$*UTF8*$!
+{
+	7382022C157A73550086884B /* bicicletorama */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = bicicletorama;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	73820232157A73730086884B /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	73820233157A73730086884B /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	7382026D157A93270086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB60B1559DD530053B731 /* player.h */;
+		name = "player.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 302;
+		vrLoc = 0;
+	};
+	7382026E157A93270086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB60A1559DD530053B731 /* bicicletorama.h */;
+		name = "bicicletorama.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 253;
+		vrLoc = 0;
+	};
+	7382026F157A93270086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 598;
+		vrLoc = 0;
+	};
+	73820270157A93270086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 414";
+		rLen = 0;
+		rLoc = 10487;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 2841;
+	};
+	844AB6081559DD530053B731 /* bicicletorama.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {824, 5421}}";
+			sepNavSelRange = "{10487, 0}";
+			sepNavVisRange = "{2841, 790}";
+		};
+	};
+	844AB60A1559DD530053B731 /* bicicletorama.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 1313}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 253}";
+		};
+	};
+	844AB60B1559DD530053B731 /* player.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 1105}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 302}";
+		};
+	};
+	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 7382022C157A73550086884B /* bicicletorama */;
+		activeTarget = E4B69B5A0A3A1756003C02F2 /* bicicletorama */;
+		codeSenseManager = 73820233157A73730086884B /* Code sense */;
+		executables = (
+			7382022C157A73550086884B /* bicicletorama */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					480,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 360346453;
+			PBXWorkspaceStateSaveDate = 360346453;
+		};
+		perUserProjectItems = {
+			7382026D157A93270086884B /* PBXTextBookmark */ = 7382026D157A93270086884B /* PBXTextBookmark */;
+			7382026E157A93270086884B /* PBXTextBookmark */ = 7382026E157A93270086884B /* PBXTextBookmark */;
+			7382026F157A93270086884B /* PBXTextBookmark */ = 7382026F157A93270086884B /* PBXTextBookmark */;
+			73820270157A93270086884B /* PBXTextBookmark */ = 73820270157A93270086884B /* PBXTextBookmark */;
+		};
+		sourceControlManager = 73820232157A73730086884B /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E4B69B5A0A3A1756003C02F2 /* bicicletorama */ = {
+		activeExec = 0;
+		executables = (
+			7382022C157A73550086884B /* bicicletorama */,
+		);
+	};
+}
