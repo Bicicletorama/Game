@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	7382022C157A73550086884B /* bicicletorama */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = bicicletorama;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	73820232157A73730086884B /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	73820233157A73730086884B /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	73820373157A964F0086884B /* ofxUI.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {994, 2015}}";
+			sepNavSelRange = "{1526, 0}";
+			sepNavVisRange = "{1187, 1392}";
+		};
+	};
+	7382041A157A96930086884B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected primary-expression before '(' token";
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 430;
+		rType = 1;
+	};
+	7382041B157A96930086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 470";
+		rLen = 0;
+		rLoc = 11203;
+		rType = 0;
+		vrLen = 1108;
+		vrLoc = 11468;
+	};
+	7382042D157A96FE0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 84C8F8A4156DE3B3004219A1 /* ofxCvGrayscaleImage.cpp */;
+		name = "ofxCvGrayscaleImage.cpp: 207";
+		rLen = 0;
+		rLoc = 7423;
+		rType = 0;
+		vrLen = 1344;
+		vrLoc = 6641;
+	};
+	7382042E157A96FE0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB60A1559DD530053B731 /* bicicletorama.h */;
+		name = "bicicletorama.h: 92";
+		rLen = 0;
+		rLoc = 1740;
+		rType = 0;
+		vrLen = 412;
+		vrLoc = 1513;
+	};
+	7382042F157A96FE0086884B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected primary-expression before '(' token";
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 430;
+		rType = 1;
+	};
+	73820430157A96FE0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 539";
+		rLen = 0;
+		rLoc = 13537;
+		rType = 0;
+		vrLen = 715;
+		vrLoc = 13708;
+	};
+	73820439157A98310086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 476";
+		rLen = 0;
+		rLoc = 11686;
+		rType = 0;
+		vrLen = 1561;
+		vrLoc = 11350;
+	};
+	7382043A157A98310086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 73820373157A964F0086884B /* ofxUI.h */;
+		name = "ofxUI.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1502;
+		vrLoc = 0;
+	};
+	7382043B157A98310086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 73820373157A964F0086884B /* ofxUI.h */;
+		name = "ofxUI.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1309;
+		vrLoc = 1527;
+	};
+	73820441157A993A0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 73820373157A964F0086884B /* ofxUI.h */;
+		name = "ofxUI.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 831;
+		vrLoc = 4064;
+	};
+	73820442157A993A0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 471";
+		rLen = 0;
+		rLoc = 11536;
+		rType = 0;
+		vrLen = 1672;
+		vrLoc = 11107;
+	};
+	73820448157A99E40086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 481";
+		rLen = 0;
+		rLoc = 12165;
+		rType = 0;
+		vrLen = 1701;
+		vrLoc = 11107;
+	};
+	7382044E157A9AEC0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB60A1559DD530053B731 /* bicicletorama.h */;
+		name = "bicicletorama.h: 109";
+		rLen = 0;
+		rLoc = 1948;
+		rType = 0;
+		vrLen = 415;
+		vrLoc = 1548;
+	};
+	7382044F157A9AEC0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 83";
+		rLen = 0;
+		rLoc = 1855;
+		rType = 0;
+		vrLen = 547;
+		vrLoc = 1438;
+	};
+	73820450157A9AEC0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 542";
+		rLen = 0;
+		rLoc = 13668;
+		rType = 0;
+		vrLen = 763;
+		vrLoc = 13747;
+	};
+	7382045E157A9CEF0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 542";
+		rLen = 0;
+		rLoc = 13642;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 13386;
+	};
+	73820462157A9E220086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 408";
+		rLen = 11;
+		rLoc = 10736;
+		rType = 0;
+		vrLen = 1587;
+		vrLoc = 9995;
+	};
+	73820463157A9E220086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 73820373157A964F0086884B /* ofxUI.h */;
+		name = "ofxUI.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 864;
+		vrLoc = 4062;
+	};
+	73820464157A9E220086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 73820373157A964F0086884B /* ofxUI.h */;
+		name = "ofxUI.h: 39";
+		rLen = 0;
+		rLoc = 1674;
+		rType = 0;
+		vrLen = 1371;
+		vrLoc = 1187;
+	};
+	73820468157A9ECA0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 73820373157A964F0086884B /* ofxUI.h */;
+		name = "ofxUI.h: 33";
+		rLen = 0;
+		rLoc = 1526;
+		rType = 0;
+		vrLen = 1392;
+		vrLoc = 1187;
+	};
+	73820469157A9ECA0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 408";
+		rLen = 11;
+		rLoc = 10736;
+		rType = 0;
+		vrLen = 1587;
+		vrLoc = 9995;
+	};
+	7382046A157A9ECA0086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 252";
+		rLen = 0;
+		rLoc = 5784;
+		rType = 0;
+		vrLen = 782;
+		vrLoc = 5405;
+	};
+	7382046E157A9F610086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB60A1559DD530053B731 /* bicicletorama.h */;
+		name = "bicicletorama.h: 111";
+		rLen = 13;
+		rLoc = 1966;
+		rType = 0;
+		vrLen = 437;
+		vrLoc = 1548;
+	};
+	7382046F157A9F610086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 252";
+		rLen = 0;
+		rLoc = 5784;
+		rType = 0;
+		vrLen = 831;
+		vrLoc = 5405;
+	};
+	73820470157A9F610086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 101";
+		rLen = 0;
+		rLoc = 2124;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 1935;
+	};
+	73820476157AA2760086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 493";
+		rLen = 0;
+		rLoc = 13405;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 13045;
+	};
+	7382047A157AA2D80086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 269";
+		rLen = 0;
+		rLoc = 6011;
+		rType = 0;
+		vrLen = 1116;
+		vrLoc = 5999;
+	};
+	73820480157AA3270086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 283";
+		rLen = 0;
+		rLoc = 6713;
+		rType = 0;
+		vrLen = 1118;
+		vrLoc = 5999;
+	};
+	73820484157AA3630086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 493";
+		rLen = 0;
+		rLoc = 13397;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 13043;
+	};
+	7382048A157AA3A20086884B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 844AB6081559DD530053B731 /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 163";
+		rLen = 0;
+		rLoc = 3555;
+		rType = 0;
+		vrLen = 1008;
+		vrLoc = 3209;
+	};
+	844AB6081559DD530053B731 /* bicicletorama.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {994, 6903}}";
+			sepNavSelRange = "{3555, 0}";
+			sepNavVisRange = "{3209, 1008}";
+		};
+	};
+	844AB60A1559DD530053B731 /* bicicletorama.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {994, 1495}}";
+			sepNavSelRange = "{1966, 13}";
+			sepNavVisRange = "{1548, 437}";
+		};
+	};
+	844AB60B1559DD530053B731 /* player.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 1105}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 302}";
+		};
+	};
+	84C8F8A4156DE3B3004219A1 /* ofxCvGrayscaleImage.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {994, 4199}}";
+			sepNavSelRange = "{7423, 0}";
+			sepNavVisRange = "{6641, 1344}";
+		};
+	};
+	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 7382022C157A73550086884B /* bicicletorama */;
+		activeTarget = E4B69B5A0A3A1756003C02F2 /* bicicletorama */;
+		addToTargets = (
+			E4B69B5A0A3A1756003C02F2 /* bicicletorama */,
+		);
+		codeSenseManager = 73820233157A73730086884B /* Code sense */;
+		executables = (
+			7382022C157A73550086884B /* bicicletorama */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					831,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 360353361;
+			PBXWorkspaceStateSaveDate = 360353361;
+		};
+		perUserProjectItems = {
+			7382041A157A96930086884B /* XCBuildMessageTextBookmark */ = 7382041A157A96930086884B /* XCBuildMessageTextBookmark */;
+			7382041B157A96930086884B /* PBXTextBookmark */ = 7382041B157A96930086884B /* PBXTextBookmark */;
+			7382042D157A96FE0086884B /* PBXTextBookmark */ = 7382042D157A96FE0086884B /* PBXTextBookmark */;
+			7382042E157A96FE0086884B /* PBXTextBookmark */ = 7382042E157A96FE0086884B /* PBXTextBookmark */;
+			7382042F157A96FE0086884B /* XCBuildMessageTextBookmark */ = 7382042F157A96FE0086884B /* XCBuildMessageTextBookmark */;
+			73820430157A96FE0086884B /* PBXTextBookmark */ = 73820430157A96FE0086884B /* PBXTextBookmark */;
+			73820439157A98310086884B /* PBXTextBookmark */ = 73820439157A98310086884B /* PBXTextBookmark */;
+			7382043A157A98310086884B /* PBXTextBookmark */ = 7382043A157A98310086884B /* PBXTextBookmark */;
+			7382043B157A98310086884B /* PBXTextBookmark */ = 7382043B157A98310086884B /* PBXTextBookmark */;
+			73820441157A993A0086884B /* PBXTextBookmark */ = 73820441157A993A0086884B /* PBXTextBookmark */;
+			73820442157A993A0086884B /* PBXTextBookmark */ = 73820442157A993A0086884B /* PBXTextBookmark */;
+			73820448157A99E40086884B /* PBXTextBookmark */ = 73820448157A99E40086884B /* PBXTextBookmark */;
+			7382044E157A9AEC0086884B /* PBXTextBookmark */ = 7382044E157A9AEC0086884B /* PBXTextBookmark */;
+			7382044F157A9AEC0086884B /* PBXTextBookmark */ = 7382044F157A9AEC0086884B /* PBXTextBookmark */;
+			73820450157A9AEC0086884B /* PBXTextBookmark */ = 73820450157A9AEC0086884B /* PBXTextBookmark */;
+			7382045E157A9CEF0086884B /* PBXTextBookmark */ = 7382045E157A9CEF0086884B /* PBXTextBookmark */;
+			73820462157A9E220086884B /* PBXTextBookmark */ = 73820462157A9E220086884B /* PBXTextBookmark */;
+			73820463157A9E220086884B /* PBXTextBookmark */ = 73820463157A9E220086884B /* PBXTextBookmark */;
+			73820464157A9E220086884B /* PBXTextBookmark */ = 73820464157A9E220086884B /* PBXTextBookmark */;
+			73820468157A9ECA0086884B /* PBXTextBookmark */ = 73820468157A9ECA0086884B /* PBXTextBookmark */;
+			73820469157A9ECA0086884B /* PBXTextBookmark */ = 73820469157A9ECA0086884B /* PBXTextBookmark */;
+			7382046A157A9ECA0086884B /* PBXTextBookmark */ = 7382046A157A9ECA0086884B /* PBXTextBookmark */;
+			7382046E157A9F610086884B /* PBXTextBookmark */ = 7382046E157A9F610086884B /* PBXTextBookmark */;
+			7382046F157A9F610086884B /* PBXTextBookmark */ = 7382046F157A9F610086884B /* PBXTextBookmark */;
+			73820470157A9F610086884B /* PBXTextBookmark */ = 73820470157A9F610086884B /* PBXTextBookmark */;
+			73820476157AA2760086884B /* PBXTextBookmark */ = 73820476157AA2760086884B /* PBXTextBookmark */;
+			7382047A157AA2D80086884B /* PBXTextBookmark */ = 7382047A157AA2D80086884B /* PBXTextBookmark */;
+			73820480157AA3270086884B /* PBXTextBookmark */ = 73820480157AA3270086884B /* PBXTextBookmark */;
+			73820484157AA3630086884B /* PBXTextBookmark */ = 73820484157AA3630086884B /* PBXTextBookmark */;
+			7382048A157AA3A20086884B /* PBXTextBookmark */ = 7382048A157AA3A20086884B /* PBXTextBookmark */;
+		};
+		sourceControlManager = 73820232157A73730086884B /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E4B69B5A0A3A1756003C02F2 /* bicicletorama */ = {
+		activeExec = 0;
+		executables = (
+			7382022C157A73550086884B /* bicicletorama */,
+		);
+	};
+}
