@@ -1,0 +1,431 @@
+-------------------------------------------------
+opengl info
+-------------------------------------------------
+version=2.1 ATI-7.32.12
+vendor=ATI Technologies Inc.
+renderer=AMD Radeon HD 6490M OpenGL Engine
+-------------------------------------------------
+opengl limits
+-------------------------------------------------
+OpenGL limits:
+    GL_MAX_ATTRIB_STACK_DEPTH = 16
+    GL_MAX_CLIENT_ATTRIB_STACK_DEPTH = 16
+    GL_MAX_CLIP_PLANES = 6
+    GL_MAX_COLOR_MATRIX_STACK_DEPTH = 10
+    GL_MAX_ELEMENTS_VERTICES = 1048575
+    GL_MAX_ELEMENTS_INDICES = 150000
+    GL_MAX_EVAL_ORDER = 10
+    GL_MAX_LIGHTS = 8
+    GL_MAX_LIST_NESTING = 64
+    GL_MAX_MODELVIEW_STACK_DEPTH = 32
+    GL_MAX_NAME_STACK_DEPTH = 128
+    GL_MAX_PIXEL_MAP_TABLE = 256
+    GL_MAX_PROJECTION_STACK_DEPTH = 10
+    GL_MAX_TEXTURE_STACK_DEPTH = 10
+    GL_MAX_TEXTURE_SIZE = 16384
+    GL_MAX_3D_TEXTURE_SIZE = 16384
+    GL_MAX_CUBE_MAP_TEXTURE_SIZE_ARB = 16384
+    GL_MAX_RECTANGLE_TEXTURE_SIZE_NV = 16384
+    GL_NUM_COMPRESSED_TEXTURE_FORMATS_ARB = 4
+    GL_MAX_TEXTURE_UNITS_ARB = 8
+    GL_MAX_TEXTURE_LOD_BIAS_EXT = 16
+    GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT = 16
+    GL_MAX_VIEWPORT_DIMS = 16384, 16384
+    GL_ALIASED_LINE_WIDTH_RANGE = 1, 64
+    GL_SMOOTH_LINE_WIDTH_RANGE = 1, 64
+    GL_ALIASED_POINT_SIZE_RANGE = 1, 64
+    GL_SMOOTH_POINT_SIZE_RANGE = 1, 64
+-------------------------------------------------
+shader limits
+-------------------------------------------------
+Shader limits:
+    GL_MAX_VERTEX_ATTRIBS = 16
+    GL_MAX_VERTEX_UNIFORM_COMPONENTS = 4096
+    GL_MAX_VARYING_FLOATS = 128
+    GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS = 16
+    GL_MAX_TEXTURE_IMAGE_UNITS = 16
+-------------------------------------------------
+available extensions
+-------------------------------------------------
+    GL_ARB_color_buffer_float, GL_ARB_depth_buffer_float, GL_ARB_depth_clamp, 
+    GL_ARB_depth_texture, GL_ARB_draw_buffers, 
+    GL_ARB_draw_elements_base_vertex, GL_ARB_draw_instanced, 
+    GL_ARB_fragment_program, GL_ARB_fragment_program_shadow, 
+    GL_ARB_fragment_shader, GL_ARB_framebuffer_object, 
+    GL_ARB_framebuffer_sRGB, GL_ARB_half_float_pixel, 
+    GL_ARB_half_float_vertex, GL_ARB_imaging, GL_ARB_instanced_arrays, 
+    GL_ARB_multisample, GL_ARB_multitexture, GL_ARB_occlusion_query, 
+    GL_ARB_pixel_buffer_object, GL_ARB_point_parameters, GL_ARB_point_sprite, 
+    GL_ARB_provoking_vertex, GL_ARB_seamless_cube_map, GL_ARB_shader_objects, 
+    GL_ARB_shader_texture_lod, GL_ARB_shading_language_100, GL_ARB_shadow, 
+    GL_ARB_shadow_ambient, GL_ARB_sync, GL_ARB_texture_border_clamp, 
+    GL_ARB_texture_compression, GL_ARB_texture_compression_rgtc, 
+    GL_ARB_texture_cube_map, GL_ARB_texture_env_add, 
+    GL_ARB_texture_env_combine, GL_ARB_texture_env_crossbar, 
+    GL_ARB_texture_env_dot3, GL_ARB_texture_float, 
+    GL_ARB_texture_mirrored_repeat, GL_ARB_texture_non_power_of_two, 
+    GL_ARB_texture_rectangle, GL_ARB_texture_rg, GL_ARB_transpose_matrix, 
+    GL_ARB_vertex_array_bgra, GL_ARB_vertex_blend, 
+    GL_ARB_vertex_buffer_object, GL_ARB_vertex_program, GL_ARB_vertex_shader, 
+    GL_ARB_window_pos, GL_EXT_abgr, GL_EXT_bgra, GL_EXT_bindable_uniform, 
+    GL_EXT_blend_color, GL_EXT_blend_equation_separate, 
+    GL_EXT_blend_func_separate, GL_EXT_blend_minmax, GL_EXT_blend_subtract, 
+    GL_EXT_clip_volume_hint, GL_EXT_draw_buffers2, GL_EXT_draw_range_elements, 
+    GL_EXT_fog_coord, GL_EXT_framebuffer_blit, GL_EXT_framebuffer_multisample, 
+    GL_EXT_framebuffer_object, GL_EXT_framebuffer_sRGB, 
+    GL_EXT_geometry_shader4, GL_EXT_gpu_program_parameters, 
+    GL_EXT_gpu_shader4, GL_EXT_multi_draw_arrays, GL_EXT_packed_depth_stencil, 
+    GL_EXT_packed_float, GL_EXT_provoking_vertex, GL_EXT_rescale_normal, 
+    GL_EXT_secondary_color, GL_EXT_separate_specular_color, 
+    GL_EXT_shadow_funcs, GL_EXT_stencil_two_side, GL_EXT_stencil_wrap, 
+    GL_EXT_texture_array, GL_EXT_texture_compression_dxt1, 
+    GL_EXT_texture_compression_s3tc, GL_EXT_texture_env_add, 
+    GL_EXT_texture_filter_anisotropic, GL_EXT_texture_integer, 
+    GL_EXT_texture_lod_bias, GL_EXT_texture_mirror_clamp, 
+    GL_EXT_texture_rectangle, GL_EXT_texture_shared_exponent, 
+    GL_EXT_texture_sRGB, GL_EXT_texture_sRGB_decode, GL_EXT_timer_query, 
+    GL_EXT_transform_feedback, GL_EXT_vertex_array_bgra, 
+    GL_APPLE_aux_depth_stencil, GL_APPLE_client_storage, 
+    GL_APPLE_element_array, GL_APPLE_fence, GL_APPLE_float_pixels, 
+    GL_APPLE_flush_buffer_range, GL_APPLE_flush_render, 
+    GL_APPLE_object_purgeable, GL_APPLE_packed_pixels, GL_APPLE_pixel_buffer, 
+    GL_APPLE_rgb_422, GL_APPLE_row_bytes, GL_APPLE_specular_vector, 
+    GL_APPLE_texture_range, GL_APPLE_transform_hint, 
+    GL_APPLE_vertex_array_object, GL_APPLE_vertex_array_range, 
+    GL_APPLE_vertex_point_size, GL_APPLE_vertex_program_evaluators, 
+    GL_APPLE_ycbcr_422, GL_ATI_blend_equation_separate, 
+    GL_ATI_blend_weighted_minmax, GL_ATI_separate_stencil, 
+    GL_ATI_texture_compression_3dc, GL_ATI_texture_env_combine3, 
+    GL_ATI_texture_float, GL_ATI_texture_mirror_once, GL_IBM_rasterpos_clip, 
+    GL_NV_blend_square, GL_NV_conditional_render, GL_NV_depth_clamp, 
+    GL_NV_fog_distance, GL_NV_light_max_exponent, GL_NV_texgen_reflection, 
+    GL_SGI_color_matrix, GL_SGIS_generate_mipmap, GL_SGIS_texture_edge_clamp, 
+    GL_SGIS_texture_lod
+-------------------------------------------------
+opengl calls available
+-------------------------------------------------
+
+GL_VERSION_1_1:                                                OK 
+---------------
+
+GL_VERSION_1_2:                                                OK 
+---------------
+  glCopyTexSubImage3D:                                         OK
+  glDrawRangeElements:                                         OK
+  glTexImage3D:                                                OK
+  glTexSubImage3D:                                             OK
+
+GL_VERSION_1_2_1:                                              OK 
+-----------------
+
+GL_VERSION_1_3:                                                OK 
+---------------
+  glActiveTexture:                                             OK
+  glClientActiveTexture:                                       OK
+  glCompressedTexImage1D:                                      OK
+  glCompressedTexImage2D:                                      OK
+  glCompressedTexImage3D:                                      OK
+  glCompressedTexSubImage1D:                                   OK
+  glCompressedTexSubImage2D:                                   OK
+  glCompressedTexSubImage3D:                                   OK
+  glGetCompressedTexImage:                                     OK
+  glLoadTransposeMatrixd:                                      OK
+  glLoadTransposeMatrixf:                                      OK
+  glMultTransposeMatrixd:                                      OK
+  glMultTransposeMatrixf:                                      OK
+  glMultiTexCoord1d:                                           OK
+  glMultiTexCoord1dv:                                          OK
+  glMultiTexCoord1f:                                           OK
+  glMultiTexCoord1fv:                                          OK
+  glMultiTexCoord1i:                                           OK
+  glMultiTexCoord1iv:                                          OK
+  glMultiTexCoord1s:                                           OK
+  glMultiTexCoord1sv:                                          OK
+  glMultiTexCoord2d:                                           OK
+  glMultiTexCoord2dv:                                          OK
+  glMultiTexCoord2f:                                           OK
+  glMultiTexCoord2fv:                                          OK
+  glMultiTexCoord2i:                                           OK
+  glMultiTexCoord2iv:                                          OK
+  glMultiTexCoord2s:                                           OK
+  glMultiTexCoord2sv:                                          OK
+  glMultiTexCoord3d:                                           OK
+  glMultiTexCoord3dv:                                          OK
+  glMultiTexCoord3f:                                           OK
+  glMultiTexCoord3fv:                                          OK
+  glMultiTexCoord3i:                                           OK
+  glMultiTexCoord3iv:                                          OK
+  glMultiTexCoord3s:                                           OK
+  glMultiTexCoord3sv:                                          OK
+  glMultiTexCoord4d:                                           OK
+  glMultiTexCoord4dv:                                          OK
+  glMultiTexCoord4f:                                           OK
+  glMultiTexCoord4fv:                                          OK
+  glMultiTexCoord4i:                                           OK
+  glMultiTexCoord4iv:                                          OK
+  glMultiTexCoord4s:                                           OK
+  glMultiTexCoord4sv:                                          OK
+  glSampleCoverage:                                            OK
+
+GL_VERSION_1_4:                                                OK 
+---------------
+  glBlendColor:                                                OK
+  glBlendEquation:                                             OK
+  glBlendFuncSeparate:                                         OK
+  glFogCoordPointer:                                           OK
+  glFogCoordd:                                                 OK
+  glFogCoorddv:                                                OK
+  glFogCoordf:                                                 OK
+  glFogCoordfv:                                                OK
+  glMultiDrawArrays:                                           OK
+  glMultiDrawElements:                                         OK
+  glPointParameterf:                                           OK
+  glPointParameterfv:                                          OK
+  glPointParameteri:                                           OK
+  glPointParameteriv:                                          OK
+  glSecondaryColor3b:                                          OK
+  glSecondaryColor3bv:                                         OK
+  glSecondaryColor3d:                                          OK
+  glSecondaryColor3dv:                                         OK
+  glSecondaryColor3f:                                          OK
+  glSecondaryColor3fv:                                         OK
+  glSecondaryColor3i:                                          OK
+  glSecondaryColor3iv:                                         OK
+  glSecondaryColor3s:                                          OK
+  glSecondaryColor3sv:                                         OK
+  glSecondaryColor3ub:                                         OK
+  glSecondaryColor3ubv:                                        OK
+  glSecondaryColor3ui:                                         OK
+  glSecondaryColor3uiv:                                        OK
+  glSecondaryColor3us:                                         OK
+  glSecondaryColor3usv:                                        OK
+  glSecondaryColorPointer:                                     OK
+  glWindowPos2d:                                               OK
+  glWindowPos2dv:                                              OK
+  glWindowPos2f:                                               OK
+  glWindowPos2fv:                                              OK
+  glWindowPos2i:                                               OK
+  glWindowPos2iv:                                              OK
+  glWindowPos2s:                                               OK
+  glWindowPos2sv:                                              OK
+  glWindowPos3d:                                               OK
+  glWindowPos3dv:                                              OK
+  glWindowPos3f:                                               OK
+  glWindowPos3fv:                                              OK
+  glWindowPos3i:                                               OK
+  glWindowPos3iv:                                              OK
+  glWindowPos3s:                                               OK
+  glWindowPos3sv:                                              OK
+
+GL_VERSION_1_5:                                                OK 
+---------------
+  glBeginQuery:                                                OK
+  glBindBuffer:                                                OK
+  glBufferData:                                                OK
+  glBufferSubData:                                             OK
+  glDeleteBuffers:                                             OK
+  glDeleteQueries:                                             OK
+  glEndQuery:                                                  OK
+  glGenBuffers:                                                OK
+  glGenQueries:                                                OK
+  glGetBufferParameteriv:                                      OK
+  glGetBufferPointerv:                                         OK
+  glGetBufferSubData:                                          OK
+  glGetQueryObjectiv:                                          OK
+  glGetQueryObjectuiv:                                         OK
+  glGetQueryiv:                                                OK
+  glIsBuffer:                                                  OK
+  glIsQuery:                                                   OK
+  glMapBuffer:                                                 OK
+  glUnmapBuffer:                                               OK
+
+GL_VERSION_2_0:                                                OK 
+---------------
+  glAttachShader:                                              OK
+  glBindAttribLocation:                                        OK
+  glBlendEquationSeparate:                                     OK
+  glCompileShader:                                             OK
+  glCreateProgram:                                             OK
+  glCreateShader:                                              OK
+  glDeleteProgram:                                             OK
+  glDeleteShader:                                              OK
+  glDetachShader:                                              OK
+  glDisableVertexAttribArray:                                  OK
+  glDrawBuffers:                                               OK
+  glEnableVertexAttribArray:                                   OK
+  glGetActiveAttrib:                                           OK
+  glGetActiveUniform:                                          OK
+  glGetAttachedShaders:                                        OK
+  glGetAttribLocation:                                         OK
+  glGetProgramInfoLog:                                         OK
+  glGetProgramiv:                                              OK
+  glGetShaderInfoLog:                                          OK
+  glGetShaderSource:                                           OK
+  glGetShaderiv:                                               OK
+  glGetUniformLocation:                                        OK
+  glGetUniformfv:                                              OK
+  glGetUniformiv:                                              OK
+  glGetVertexAttribPointerv:                                   OK
+  glGetVertexAttribdv:                                         OK
+  glGetVertexAttribfv:                                         OK
+  glGetVertexAttribiv:                                         OK
+  glIsProgram:                                                 OK
+  glIsShader:                                                  OK
+  glLinkProgram:                                               OK
+  glShaderSource:                                              OK
+  glStencilFuncSeparate:                                       OK
+  glStencilMaskSeparate:                                       OK
+  glStencilOpSeparate:                                         OK
+  glUniform1f:                                                 OK
+  glUniform1fv:                                                OK
+  glUniform1i:                                                 OK
+  glUniform1iv:                                                OK
+  glUniform2f:                                                 OK
+  glUniform2fv:                                                OK
+  glUniform2i:                                                 OK
+  glUniform2iv:                                                OK
+  glUniform3f:                                                 OK
+  glUniform3fv:                                                OK
+  glUniform3i:                                                 OK
+  glUniform3iv:                                                OK
+  glUniform4f:                                                 OK
+  glUniform4fv:                                                OK
+  glUniform4i:                                                 OK
+  glUniform4iv:                                                OK
+  glUniformMatrix2fv:                                          OK
+  glUniformMatrix3fv:                                          OK
+  glUniformMatrix4fv:                                          OK
+  glUseProgram:                                                OK
+  glValidateProgram:                                           OK
+  glVertexAttrib1d:                                            OK
+  glVertexAttrib1dv:                                           OK
+  glVertexAttrib1f:                                            OK
+  glVertexAttrib1fv:                                           OK
+  glVertexAttrib1s:                                            OK
+  glVertexAttrib1sv:                                           OK
+  glVertexAttrib2d:                                            OK
+  glVertexAttrib2dv:                                           OK
+  glVertexAttrib2f:                                            OK
+  glVertexAttrib2fv:                                           OK
+  glVertexAttrib2s:                                            OK
+  glVertexAttrib2sv:                                           OK
+  glVertexAttrib3d:                                            OK
+  glVertexAttrib3dv:                                           OK
+  glVertexAttrib3f:                                            OK
+  glVertexAttrib3fv:                                           OK
+  glVertexAttrib3s:                                            OK
+  glVertexAttrib3sv:                                           OK
+  glVertexAttrib4Nbv:                                          OK
+  glVertexAttrib4Niv:                                          OK
+  glVertexAttrib4Nsv:                                          OK
+  glVertexAttrib4Nub:                                          OK
+  glVertexAttrib4Nubv:                                         OK
+  glVertexAttrib4Nuiv:                                         OK
+  glVertexAttrib4Nusv:                                         OK
+  glVertexAttrib4bv:                                           OK
+  glVertexAttrib4d:                                            OK
+  glVertexAttrib4dv:                                           OK
+  glVertexAttrib4f:                                            OK
+  glVertexAttrib4fv:                                           OK
+  glVertexAttrib4iv:                                           OK
+  glVertexAttrib4s:                                            OK
+  glVertexAttrib4sv:                                           OK
+  glVertexAttrib4ubv:                                          OK
+  glVertexAttrib4uiv:                                          OK
+  glVertexAttrib4usv:                                          OK
+  glVertexAttribPointer:                                       OK
+
+GL_VERSION_2_1:                                                OK 
+---------------
+  glUniformMatrix2x3fv:                                        OK
+  glUniformMatrix2x4fv:                                        OK
+  glUniformMatrix3x2fv:                                        OK
+  glUniformMatrix3x4fv:                                        OK
+  glUniformMatrix4x2fv:                                        OK
+  glUniformMatrix4x3fv:                                        OK
+
+GL_VERSION_3_0:                                                OK 
+---------------
+  glBeginConditionalRender:                                    OK
+  glBeginTransformFeedback:                                    OK
+  glBindFragDataLocation:                                      OK
+  glClampColor:                                                OK
+  glClearBufferfi:                                             OK
+  glClearBufferfv:                                             OK
+  glClearBufferiv:                                             OK
+  glClearBufferuiv:                                            OK
+  glColorMaski:                                                OK
+  glDisablei:                                                  OK
+  glEnablei:                                                   OK
+  glEndConditionalRender:                                      OK
+  glEndTransformFeedback:                                      OK
+  glGetBooleani_v:                                             OK
+  glGetFragDataLocation:                                       OK
+  glGetStringi:                                                OK
+  glGetTexParameterIiv:                                        OK
+  glGetTexParameterIuiv:                                       OK
+  glGetTransformFeedbackVarying:                               OK
+  glGetUniformuiv:                                             OK
+  glGetVertexAttribIiv:                                        OK
+  glGetVertexAttribIuiv:                                       OK
+  glIsEnabledi:                                                OK
+  glTexParameterIiv:                                           OK
+  glTexParameterIuiv:                                          OK
+  glTransformFeedbackVaryings:                                 OK
+  glUniform1ui:                                                OK
+  glUniform1uiv:                                               OK
+  glUniform2ui:                                                OK
+  glUniform2uiv:                                               OK
+  glUniform3ui:                                                OK
+  glUniform3uiv:                                               OK
+  glUniform4ui:                                                OK
+  glUniform4uiv:                                               OK
+  glVertexAttribI1i:                                           OK
+  glVertexAttribI1iv:                                          OK
+  glVertexAttribI1ui:                                          OK
+  glVertexAttribI1uiv:                                         OK
+  glVertexAttribI2i:                                           OK
+  glVertexAttribI2iv:                                          OK
+  glVertexAttribI2ui:                                          OK
+  glVertexAttribI2uiv:                                         OK
+  glVertexAttribI3i:                                           OK
+  glVertexAttribI3iv:                                          OK
+  glVertexAttribI3ui:                                          OK
+  glVertexAttribI3uiv:                                         OK
+  glVertexAttribI4bv:                                          OK
+  glVertexAttribI4i:                                           OK
+  glVertexAttribI4iv:                                          OK
+  glVertexAttribI4sv:                                          OK
+  glVertexAttribI4ubv:                                         OK
+  glVertexAttribI4ui:                                          OK
+  glVertexAttribI4uiv:                                         OK
+  glVertexAttribI4usv:                                         OK
+  glVertexAttribIPointer:                                      OK
+
+GL_VERSION_3_1:                                                OK 
+---------------
+  glDrawArraysInstanced:                                       OK
+  glDrawElementsInstanced:                                     OK
+  glPrimitiveRestartIndex:                                     OK
+  glTexBuffer:                                                 OK
+
+GL_VERSION_3_2:                                                OK 
+---------------
+  glFramebufferTexture:                                        OK
+  glGetBufferParameteri64v:                                    OK
+  glGetInteger64i_v:                                           OK
+
+GL_VERSION_3_3:                                                MISSING 
+---------------
+  glVertexAttribDivisor:                                       MISSING
+
+GL_VERSION_4_0:                                                MISSING 
+---------------
+  glBlendEquationSeparatei:                                    MISSING
+  glBlendEquationi:                                            MISSING
+  glBlendFuncSeparatei:                                        MISSING
+  glBlendFunci:                                                MISSING
+  glMinSampleShading:                                          MISSING
+
+GL_VERSION_4_1:                                                MISSING 
+---------------
