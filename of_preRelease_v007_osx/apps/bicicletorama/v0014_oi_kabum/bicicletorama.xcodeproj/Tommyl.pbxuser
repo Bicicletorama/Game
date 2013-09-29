@@ -1,0 +1,246 @@
+// !$*UTF8*$!
+{
+	734D87BB1592146A0064CBA8 /* bicicletorama */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = bicicletorama;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	734D87E31592147F0064CBA8 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	734D87E41592147F0064CBA8 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	734D893F1592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8428A86C1592B65500A65DF6 /* menu.h */;
+		name = "menu.h: 81";
+		rLen = 0;
+		rLoc = 1276;
+		rType = 0;
+		vrLen = 641;
+		vrLoc = 206;
+	};
+	734D89401592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 84F8C926159296A400FB0D49 /* arduino.h */;
+		name = "arduino.h: 19";
+		rLen = 14;
+		rLoc = 236;
+		rType = 0;
+		vrLen = 305;
+		vrLoc = 0;
+	};
+	734D89411592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 734D89421592F4230064CBA8 /* ofSerial.h */;
+		name = "ofSerial.h: 17";
+		rLen = 0;
+		rLoc = 371;
+		rType = 0;
+		vrLen = 816;
+		vrLoc = 628;
+	};
+	734D89421592F4230064CBA8 /* ofSerial.h */ = {
+		isa = PBXFileReference;
+		name = ofSerial.h;
+		path = /Users/Tommyl/Dropbox/Bicicletorama/software/of_preRelease_v007_osx/libs/openFrameworks/communication/ofSerial.h;
+		sourceTree = "<absolute>";
+	};
+	734D89431592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 734D89441592F4230064CBA8 /* ofSerial.cpp */;
+		name = "ofSerial.cpp: 12";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 758;
+		vrLoc = 17572;
+	};
+	734D89441592F4230064CBA8 /* ofSerial.cpp */ = {
+		isa = PBXFileReference;
+		name = ofSerial.cpp;
+		path = /Users/Tommyl/Dropbox/Bicicletorama/software/of_preRelease_v007_osx/libs/openFrameworks/communication/ofSerial.cpp;
+		sourceTree = "<absolute>";
+	};
+	734D89451592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 84F8C925159296A400FB0D49 /* arduino.cpp */;
+		name = "arduino.cpp: 31";
+		rLen = 0;
+		rLoc = 603;
+		rType = 0;
+		vrLen = 692;
+		vrLoc = 451;
+	};
+	734D89461592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8428A86B15929EF600A65DF6 /* config.h */;
+		name = "config.h: 7";
+		rLen = 0;
+		rLoc = 88;
+		rType = 0;
+		vrLen = 128;
+		vrLoc = 0;
+	};
+	734D89471592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 84109CC4158DC30C001FA1CD /* game.cpp */;
+		name = "game.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 649;
+		vrLoc = 0;
+	};
+	734D89481592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 84109CC3158DC30C001FA1CD /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 13";
+		rLen = 0;
+		rLoc = 244;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 0;
+	};
+	734D89491592F4230064CBA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 84109CC3158DC30C001FA1CD /* bicicletorama.cpp */;
+		name = "bicicletorama.cpp: 13";
+		rLen = 0;
+		rLoc = 244;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 1;
+	};
+	84109CC3158DC30C001FA1CD /* bicicletorama.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1151, 1391}}";
+			sepNavSelRange = "{244, 0}";
+			sepNavVisRange = "{1, 718}";
+		};
+	};
+	84109CC4158DC30C001FA1CD /* game.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1151, 2600}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 649}";
+		};
+	};
+	8428A86B15929EF600A65DF6 /* config.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1151, 389}}";
+			sepNavSelRange = "{88, 0}";
+			sepNavVisRange = "{0, 128}";
+		};
+	};
+	8428A86C1592B65500A65DF6 /* menu.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1151, 1053}}";
+			sepNavSelRange = "{1276, 0}";
+			sepNavVisRange = "{206, 641}";
+		};
+	};
+	84F8C925159296A400FB0D49 /* arduino.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1151, 1495}}";
+			sepNavSelRange = "{603, 0}";
+			sepNavVisRange = "{451, 692}";
+		};
+	};
+	84F8C926159296A400FB0D49 /* arduino.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1151, 414}}";
+			sepNavSelRange = "{236, 14}";
+			sepNavVisRange = "{0, 305}";
+		};
+	};
+	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 734D87BB1592146A0064CBA8 /* bicicletorama */;
+		activeTarget = E4B69B5A0A3A1756003C02F2 /* bicicletorama */;
+		codeSenseManager = 734D87E41592147F0064CBA8 /* Code sense */;
+		executables = (
+			734D87BB1592146A0064CBA8 /* bicicletorama */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					988,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 361945506;
+			PBXWorkspaceStateSaveDate = 361945506;
+		};
+		perUserProjectItems = {
+			734D893F1592F4230064CBA8 /* PBXTextBookmark */ = 734D893F1592F4230064CBA8 /* PBXTextBookmark */;
+			734D89401592F4230064CBA8 /* PBXTextBookmark */ = 734D89401592F4230064CBA8 /* PBXTextBookmark */;
+			734D89411592F4230064CBA8 /* PBXTextBookmark */ = 734D89411592F4230064CBA8 /* PBXTextBookmark */;
+			734D89431592F4230064CBA8 /* PBXTextBookmark */ = 734D89431592F4230064CBA8 /* PBXTextBookmark */;
+			734D89451592F4230064CBA8 /* PBXTextBookmark */ = 734D89451592F4230064CBA8 /* PBXTextBookmark */;
+			734D89461592F4230064CBA8 /* PBXTextBookmark */ = 734D89461592F4230064CBA8 /* PBXTextBookmark */;
+			734D89471592F4230064CBA8 /* PBXTextBookmark */ = 734D89471592F4230064CBA8 /* PBXTextBookmark */;
+			734D89481592F4230064CBA8 /* PBXTextBookmark */ = 734D89481592F4230064CBA8 /* PBXTextBookmark */;
+			734D89491592F4230064CBA8 /* PBXTextBookmark */ = 734D89491592F4230064CBA8 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 734D87E31592147F0064CBA8 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E4B69B5A0A3A1756003C02F2 /* bicicletorama */ = {
+		activeExec = 0;
+		executables = (
+			734D87BB1592146A0064CBA8 /* bicicletorama */,
+		);
+	};
+}
