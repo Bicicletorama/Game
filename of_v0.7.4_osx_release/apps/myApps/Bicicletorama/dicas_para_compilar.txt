@@ -1,0 +1,8 @@
+
+DICAS PARA COMPILAR O BICICLETORAMA
+
+- Certifique-se que os projetos estão definidos para o SDK correto (10.7)
+
+- Certifique-se que nenhum addon possui exemplos, eles duplicam as instancias de main.cpp e gera conflitos
+
+- Certifique-se que a lib "Triangle" só é importada uma vez, já que tanto o Box2D e o ofxTriangle as utilizam. Se houver duplicatas, apague uma.
