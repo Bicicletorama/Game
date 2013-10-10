@@ -1,7 +1,40 @@
+### Others
+
+
+#OSX
+.DS_Store
+*.swp
+*~.nib
+._*
+
+#Windows
+Thumbs.db
+Desktop.ini
+
+
+### C++
+
 # Compiled Object files
 *.slo
 *.lo
 *.o
+*.tlog
+*.log
+*.obj
+*.ilk
+*.pdb
+*.tmp
+Debug*/
+Release*/
+build/
+obj/
+
+#Visual Studio
+*.sdf
+*.opensdf
+*.suo
+ipch/
+
 
 # Compiled Dynamic libraries
 *.so
@@ -11,3 +44,23 @@
 *.lai
 *.la
 *.a
+
+### XCODE
+*.plist
+*.pbxproj
+*.xcscheme
+*.xcbkptlist
+*.plist
+*.pth
+*.hash-criteria
+*.xcactivitylog
+*.xcsettings
+*.db
+*.idx
+*.xcscheme
+Contents/
+DerivedData/
+
+
+
+*.gitkeep
