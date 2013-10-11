@@ -1,0 +1,9 @@
+ofxOpenCv
+ofxXmlSettings
+ofxAssets
+ofxBox2d
+ofxExtras
+ofxKinectNui
+ofxSpriteManager
+ofxTriangle
+ofxUI
