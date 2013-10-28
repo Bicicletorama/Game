@@ -61,7 +61,7 @@ void Borda::draw()
     
     //empty area
     ofSetColor(0,0,0,0);
-    ofRect(border, border, mask.getWidth() - border, mask.getHeight() - border);
+    ofRect(border, border, mask.getWidth() - border - border, mask.getHeight() - border - border);
     
     //blobs area
     ofSetColor(255,255,255,255);
