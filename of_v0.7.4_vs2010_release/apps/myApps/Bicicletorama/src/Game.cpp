@@ -64,12 +64,14 @@ void Game::update()
         //players
         for (int i = 0; i < TOTAL_PLAYERS; i++) {
             
-            int totalImpulses = arduino->getImpulse(i);
-            for (int j = 0; j < totalImpulses; j++) {
-                playerList[i].applyImpulse();
-            }
+			if(arduino->connected){
+				int totalImpulses = arduino->getImpulse(i);
+				for (int j = 0; j < totalImpulses; j++) {
+					playerList[i].applyImpulse();
+				}
             
-            playerList[i].setDirection( arduino->getDirection(i) );
+				playerList[i].setDirection( arduino->getDirection(i) );
+			}
             
             playerList[i].update();
         }
@@ -153,10 +155,10 @@ void Game::keyReleased(int key)
         //players keyboards extra controls
         switch(key)
         { 
-            case OF_KEY_UP: playerList[0].applyImpulse(); break; //up
-            case 359: playerList[0].setDirection(0); break; //down
-            case 356: playerList[0].setDirectionIncrement(-1); break; //left
-            case 358: playerList[0].setDirectionIncrement(1); break; //right
+            case OF_KEY_UP: playerList[0].applyImpulse(); break;
+			case OF_KEY_DOWN: playerList[0].setDirection(0); break;
+            case OF_KEY_LEFT: playerList[0].setDirectionIncrement(-1); break;
+			case OF_KEY_RIGHT: playerList[0].setDirectionIncrement(1); break;
             
             case 'w': playerList[1].applyImpulse(); break;
             case 's': playerList[1].setDirection(0); break;

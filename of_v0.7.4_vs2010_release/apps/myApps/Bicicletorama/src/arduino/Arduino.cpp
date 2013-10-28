@@ -3,8 +3,13 @@
 
 void Arduino::setup()
 {
-    ofSerial::setup();
+    connected = ofSerial::setup();
     buffer = "";
+	
+	for (int i = 0; i < TOTAL_PLAYERS; i++) {
+		impulse[i] = 0;
+		direction[i] = 0;
+	}
 }
 
 void Arduino::update()

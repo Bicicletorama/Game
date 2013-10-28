@@ -12,6 +12,7 @@ public:
 	void setup();
 	void update();
     
+	bool connected;
     int getImpulse(int playerID);
     float getDirection(int playerID);
     
