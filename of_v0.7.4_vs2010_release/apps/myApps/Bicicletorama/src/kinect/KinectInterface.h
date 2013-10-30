@@ -11,7 +11,6 @@
 
 #include "opencv2/core/core_c.h"
 
-
 class KinectInterface {
     
 public:
@@ -40,19 +39,15 @@ public:
 	int MIN_BLOB_AREA;
     int TOLERANCE; //millimeter of invisible outline from any object found by kinect
     int SENSIBILITY; //number of frames readed with success to detect a real object by kinect
-
-	void kinectPlugged();
-	void kinectUnplugged();
 		
 	ofxKinectNui kinect;
 	bool bPlugged;
 
     
 private:
-        
-    ofxKinectNui m_kinect;
     
-	ofxCvGrayscaleImage kinectImage;
+	ofxCvGrayscaleImage depthImage;
+	ofxCvGrayscaleImage thresholdedImage;
     
     ofPixels backgroundPixels;
     ofPixels lifePixels;

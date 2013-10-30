@@ -22,27 +22,20 @@ void KinectInterface::setup(b2World * _world)
 	//Kinect
 	ofxKinectNui::InitSetting initSetting;
 	initSetting.grabVideo = false;
-	initSetting.grabDepth = false;
+	initSetting.grabDepth = true;
 	initSetting.grabAudio = false;
 	initSetting.grabLabel = false;
-	initSetting.grabSkeleton = true;
+	initSetting.grabSkeleton = false;
 	initSetting.grabCalibratedVideo = false;
 	initSetting.grabLabelCv = false;
-	initSetting.videoResolution = NUI_IMAGE_RESOLUTION_320x240;
-	initSetting.depthResolution = NUI_IMAGE_RESOLUTION_320x240;
-	m_kinect.init(initSetting);
-	m_kinect.open();
-	m_kinect.addKinectListener(this, &KinectInterface::kinectPlugged, &KinectInterface::kinectUnplugged);
+	initSetting.depthResolution = NUI_IMAGE_RESOLUTION_640x480;
+	kinect.init(initSetting);
+	kinect.open();
 	
-	bPlugged = m_kinect.isConnected();
-
-
-
-    
-    kinectNumPixels = KINECT_WIDTH * KINECT_HEIGHT;
+	kinectNumPixels = KINECT_WIDTH * KINECT_HEIGHT;
     
     backgroundPixels.allocate(KINECT_WIDTH, KINECT_HEIGHT, 1);
-	backgroundPixels.set(m_kinect.getFarClippingDistance());
+	backgroundPixels.set(kinect.getFarClippingDistance());
     
     lifePixels.allocate(KINECT_WIDTH, KINECT_HEIGHT, 1);
     lifePixels.set(0);
@@ -50,7 +43,8 @@ void KinectInterface::setup(b2World * _world)
 	
     captureCount = 0;
     
-	kinectImage.allocate(KINECT_WIDTH, KINECT_HEIGHT);
+	depthImage.allocate(KINECT_WIDTH, KINECT_HEIGHT);
+	thresholdedImage.allocate(KINECT_WIDTH, KINECT_HEIGHT);
     updateROI(0, 0, WIDTH, HEIGHT);
     
     scaledImage.allocate(WIDTH, HEIGHT);
@@ -61,10 +55,11 @@ void KinectInterface::setup(b2World * _world)
 
 void KinectInterface::update()
 {	
-    m_kinect.update();
+    kinect.update();
 	
-	if( m_kinect.isFrameNew() ) 
+	if( kinect.isOpened() ) 
 	{
+        depthImage.setFromPixels(kinect.getDepthPixels());
         
         // capturing and saving background
         
@@ -78,7 +73,7 @@ void KinectInterface::update()
         
         // capturing and saving kinect
         
-		ofPixels kinectRawDepthPixels = m_kinect.getDepthPixels();
+		ofPixels kinectRawDepthPixels = kinect.getDepthPixels();
         
         for (int i = 0; i < kinectNumPixels; i++)
         {
@@ -95,10 +90,7 @@ void KinectInterface::update()
         
         
         // gray image
-        
-        kinectImage.set(0);
-        unsigned char * grayPixels = kinectImage.getPixels();
-        
+        unsigned char * grayPixels = depthImage.getPixels();
         for (int i = 0; i < kinectNumPixels; i++)
         {
             if (lifePixels[i] >= SENSIBILITY) {
@@ -107,18 +99,16 @@ void KinectInterface::update()
                 grayPixels[i] = 0;
             }
         }
-		kinectImage.flagImageChanged();
+		depthImage.flagImageChanged();
         
         
-        // blur
-        
-		kinectImage.blur(BLUR_AMOUNT);
-        kinectImage.threshold(30);
+		thresholdedImage.setFromPixels(depthImage.getRoiPixels(), depthImage.getROI().width, depthImage.getROI().height);
+        thresholdedImage.blur(BLUR_AMOUNT);
+        thresholdedImage.threshold(30);
         
         
         // find contours
-        
-        scaledImage.scaleIntoMe(kinectImage);
+        scaledImage.scaleIntoMe(thresholdedImage);
 		contourFinder.findContours(scaledImage, MIN_BLOB_AREA, 2000000, 100, false);
         
         
@@ -158,7 +148,7 @@ void KinectInterface::draw()
     ofSetColor(255, 255, 255);
     
     if (showCropped) {
-        kinectImage.drawROI(0,0, WIDTH, HEIGHT);
+        depthImage.drawROI(0,0, WIDTH, HEIGHT);
     }
 	if (showContour) {
         ofSetColor(255, 0, 0);
@@ -172,8 +162,8 @@ void KinectInterface::draw()
         ofSetColor(255);
     }
 	if (showKinect) {
-        m_kinect.drawDepth(400, 500, 200, 150);
-        kinectImage.draw(610, 500, 200, 150);
+		depthImage.draw(400, 500, 200, 150);
+        thresholdedImage.draw(610, 500, 200, 150);
         contourFinder.draw(610, 500, 200, 150);
     }
 }
@@ -190,43 +180,33 @@ void KinectInterface::keyPressed(int key)
 
 void KinectInterface::updateROI(int x, int y, int w, int h)
 {
-    kinectImage.setROI(x, y, w, h);
+    depthImage.setROI(x, y, w, h);
 }
 
 void KinectInterface::captureBackground(bool clearBackground = false)
 {
+	if(!kinect.isOpened()) return;
+
     if (clearBackground) {
         captureCount = 60;
 		backgroundPixels.set(kinect.getFarClippingDistance());
     }
 
-	if(!bPlugged) return;
-
 							//getRawDepthPixels
-    ofPixels pixels = m_kinect.getDepthPixels();
+    ofPixels pixels = kinect.getDepthPixels();
     for (int i = 0; i < kinectNumPixels; i++)
     {
         if (pixels[i] == 0) {
 								//getFarClipping
-            pixels[i] = m_kinect.getFarClippingDistance();
+            pixels[i] = kinect.getFarClippingDistance();
         }
         backgroundPixels[i] = min(backgroundPixels[i], pixels[i]);
     }
 }
 
-//--------------------------------------------------------------
-void KinectInterface::kinectPlugged(){
-	bPlugged = true;
-}
-
-//--------------------------------------------------------------
-void KinectInterface::kinectUnplugged(){
-	bPlugged = false;
-}
-
 void KinectInterface::exit()
 {
-    m_kinect.close();
+    kinect.close();
 }
 
 
