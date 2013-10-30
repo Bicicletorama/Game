@@ -26,7 +26,6 @@ public:
     
     void captureBackground(bool clearBackground);
     
-    ofxCvGrayscaleImage		scaledImage;
 	ofxCvContourFinder		contourFinder;
     
 	vector <ofPoint>		quadCropCorners;
@@ -47,6 +46,7 @@ public:
     
 private:
     
+    ofxCvGrayscaleImage	scaledImage;
 	ofxCvGrayscaleImage depthImage;
 	ofxCvGrayscaleImage thresholdedImage;
     

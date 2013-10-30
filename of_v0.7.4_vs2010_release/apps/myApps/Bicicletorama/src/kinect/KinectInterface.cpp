@@ -48,7 +48,7 @@ void KinectInterface::setup(b2World * _world)
     updateROI(0, 0, WIDTH, HEIGHT);
     
     scaledImage.allocate(WIDTH, HEIGHT);
-    
+	
     //first auto capture background
     captureBackground(true);
 }
