@@ -22,6 +22,7 @@ public:
 	void exit();
     
     void updateROI(int x, int y, int w, int h);
+	void setAngle(int _angle);
     
     void captureBackground(bool clearBackground);
     
@@ -56,7 +57,7 @@ private:
     int kinectNumPixels;
     int captureCount;
     
-	
+	int angle;
     
     b2World *                   world;
 	vector <ofxBox2dPolygon>	polys;

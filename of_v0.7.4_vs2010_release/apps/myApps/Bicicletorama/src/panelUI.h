@@ -52,6 +52,7 @@ public:
         gui1->addWidgetDown(new ofxUISlider(length-xInit,dim, 0.0, 5000.0, 1000.0, "MinBlobArea"));
         gui1->addWidgetDown(new ofxUISlider(length-xInit,dim, 0, 30, 5, "Tolerance"));
         gui1->addWidgetDown(new ofxUISlider(length-xInit,dim, 1, 10, 3, "Sensibility"));
+        gui1->addWidgetDown(new ofxUISlider(length-xInit,dim, -27.0, 27.0, 0.0, "Angle"));
         
         gui1->addWidgetDown(new ofxUISpacer(length-xInit, 2));
         gui1->addWidgetDown(new ofxUILabelButton( length-xInit, false, "CAPTURE BACKGROUND", OFX_UI_FONT_MEDIUM));
@@ -138,6 +139,11 @@ public:
         {
             ofxUISlider *slider = (ofxUISlider *) e.widget;
             m_kinect->SENSIBILITY = slider->getScaledValue();
+        }
+        else if(name == "Angle")
+        {
+			ofxUISlider *slider = (ofxUISlider *) e.widget;
+			m_kinect->setAngle(slider->getScaledValue());
         }
         else if(name == "CAPTURE BACKGROUND")
         {

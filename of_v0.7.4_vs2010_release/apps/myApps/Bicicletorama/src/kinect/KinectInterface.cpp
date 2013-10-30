@@ -183,6 +183,14 @@ void KinectInterface::updateROI(int x, int y, int w, int h)
     depthImage.setROI(x, y, w, h);
 }
 
+void KinectInterface::setAngle(int _angle)
+{
+	angle = _angle;
+	if(angle < -27) angle = -27;
+	if(angle > 27) angle = 27;
+	kinect.setAngle(angle);
+}
+
 void KinectInterface::captureBackground(bool clearBackground = false)
 {
 	if(!kinect.isOpened()) return;
