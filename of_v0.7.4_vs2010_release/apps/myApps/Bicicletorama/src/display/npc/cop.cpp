@@ -1,6 +1,6 @@
-#include "cup.h"
+#include "cop.h"
 
-void cup::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
+void cop::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 {
 	spriteIdle.addFile("images/human/civil/idle/1.png");
 	spriteIdle.addFile("images/human/civil/idle/2.png");
@@ -35,12 +35,12 @@ void cup::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	human::setup(b2dworld, playerList);
 }
 
-void cup::update()
+void cop::update()
 {
 	human::update();
 }
 
-void cup::draw()
+void cop::draw()
 {
 	human::draw();
 }

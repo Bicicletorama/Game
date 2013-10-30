@@ -205,7 +205,7 @@ void Game::mouseDragged(int x, int y, int button)
 //--------------------------------------------------------------
 void Game::mousePressed(int x, int y, int button)
 {
-    cup * c = new cup();
+    cop * c = new cop();
     c->setup(world, &playerList);
     humans.push_back((human *)c);
 }
