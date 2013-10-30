@@ -5,6 +5,9 @@
 #include "Config.h"
 #include "Arduino.h"
 #include "player.h"
+#include "human.h"
+#include "cup.h"
+#include "civil.h"
 #include "sound.h"
 
 
@@ -18,6 +21,7 @@ public:
     
 	void keyReleased(int key);
 	void mouseDragged(int x, int y, int button);
+	void mousePressed(int x, int y, int button);
     
     void updatePlayersDirection(float direction[TOTAL_PLAYERS]);
     void updatePlayersDistance(float distance[TOTAL_PLAYERS]);
@@ -45,5 +49,7 @@ private:
     int currentCabeca;
     
     vector <ofxBox2dCircle>	obstaculos;
+	
+    vector <human*>	humans;
     
 };

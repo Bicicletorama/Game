@@ -4,13 +4,13 @@
 #include "ofxAssets.h"
 #include <assert.h>
 
-class ofxSprite : public ofNode {
+class ofxSprite {
 public:
-    
+    int x, y;
+	float rotation;
+
     ofxSprite();
     void load(string filename, int numFrames=1, int start=0, string id="");
-    
-    void customDraw();
 
     void draw(float x, float y);
     void draw(ofVec2f v);

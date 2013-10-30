@@ -42,11 +42,12 @@ void Game::setup(b2World * _world, Arduino * _arduino)
     
     //timer
     lastGameTimer = -1;
+	
 }
 
 //--------------------------------------------------------------
 void Game::update()
-{   
+{
     //contagem regressiva
     startGameTimer = (ofGetElapsedTimeMillis() - startGameMillis) / 1000;
 
@@ -76,6 +77,11 @@ void Game::update()
             playerList[i].update();
         }
     }
+
+	//npc
+	for (int i=0; i<humans.size(); i++) {
+		humans[i]->update();
+	}
     
 }
 
@@ -143,6 +149,11 @@ void Game::draw()
             locked = false;
         }
     }
+
+	//npc
+	for (int i=0; i<humans.size(); i++) {
+		humans[i]->draw();
+	}
 }
 
 //--------------------------------------------------------------
@@ -189,6 +200,14 @@ void Game::mouseDragged(int x, int y, int button)
         circle.body->SetType(b2_staticBody);
         obstaculos.push_back(circle);
     }
+}
+
+//--------------------------------------------------------------
+void Game::mousePressed(int x, int y, int button)
+{
+    cup * c = new cup();
+    c->setup(world, &playerList);
+    humans.push_back((human *)c);
 }
 
 //--------------------------------------------------------------

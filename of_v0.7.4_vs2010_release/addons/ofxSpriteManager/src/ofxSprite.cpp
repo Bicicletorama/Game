@@ -3,6 +3,9 @@
 ofxImageAssets ofxSprite::assets; // create static instance
 
 ofxSprite::ofxSprite() {
+	x = 0;
+	y = 0;
+	rotation = 0;
     isPlaying = false;
     speed = 1;
     pos = 0;
@@ -80,15 +83,17 @@ void ofxSprite::center() {
 }
 
 void ofxSprite::setPosition(float x, float y) {
-    ofNode::setPosition(x,y,0);
+    this->x = x;
+    this->y = y;
 }
 
 void ofxSprite::setPosition(ofVec3f v) {
-    ofNode::setPosition(v);
+    this->x = v.x;
+    this->y = v.y;
 }
 
 void ofxSprite::setRotation(float rotation) {
-    setOrientation(ofVec3f(0,0,rotation));
+    this->rotation = rotation;
 }
 
 void ofxSprite::play() {
@@ -118,18 +123,17 @@ float ofxSprite::getHeight() {
     return getCurrentImage().getHeight();
 }
 
-void ofxSprite::customDraw() {
-    if (!visible) return;
-    getCurrentImage().draw(-anchorPoint);
-}
-
 void ofxSprite::draw() {
-    ofNode::draw();
+	draw(x, y);
 }
 
 void ofxSprite::draw(float x, float y) {
-    //or should this one call setPosition and then draw()?
-    getCurrentImage().draw(ofPoint(x,y)-anchorPoint);
+    if (!visible) return;
+	ofPushMatrix();
+	ofTranslate(x, y);
+	ofRotate(rotation);
+	getCurrentImage().draw(-anchorPoint);
+	ofPopMatrix();
 }
 
 void ofxSprite::draw(ofVec2f v) {
@@ -147,7 +151,7 @@ ofImage& ofxSprite::getCurrentImage() {
 }
 
 ofRectangle ofxSprite::getBounds() {
-    return ofRectangle(getPosition().x, getPosition().y, getWidth(), getHeight());
+    return ofRectangle(x, y, getWidth(), getHeight());
 }
 
 ofVec2f ofxSprite::getSize() {

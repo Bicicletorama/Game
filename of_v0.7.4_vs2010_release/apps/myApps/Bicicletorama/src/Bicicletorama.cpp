@@ -73,7 +73,9 @@ void Bicicletorama::mouseDragged(int x, int y, int button)
 }
 
 //--------------------------------------------------------------
-void Bicicletorama::mousePressed(int x, int y, int button) {}
+void Bicicletorama::mousePressed(int x, int y, int button) {
+    game.mousePressed(x, y, button);
+}
 
 //--------------------------------------------------------------
 void Bicicletorama::mouseReleased(int x, int y, int button) {}

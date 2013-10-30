@@ -7,5 +7,5 @@
 #define WIDTH 1024
 #define HEIGHT 768
 
-#define KINECT_WIDTH 320
-#define KINECT_HEIGHT 240
+#define KINECT_WIDTH 640
+#define KINECT_HEIGHT 480
