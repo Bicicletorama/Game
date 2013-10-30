@@ -247,6 +247,15 @@
     <ClCompile Include="src\kinect\KinectInterface.cpp">
       <Filter>src\kinect</Filter>
     </ClCompile>
+    <ClCompile Include="src\display\npc\civil.cpp">
+      <Filter>src\display\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\npc\human.cpp">
+      <Filter>src\display\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\npc\cop.cpp">
+      <Filter>src\display\npc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -422,6 +431,9 @@
     </Filter>
     <Filter Include="src\arduino">
       <UniqueIdentifier>{bfdfccbd-4b59-4961-a5b8-ce5bafcf6140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\display\npc">
+      <UniqueIdentifier>{82a6b208-5527-4a72-9799-e2f22ef3b9ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1108,6 +1120,15 @@
     </ClInclude>
     <ClInclude Include="src\kinect\KinectInterface.h">
       <Filter>src\kinect</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\npc\civil.h">
+      <Filter>src\display\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\npc\human.h">
+      <Filter>src\display\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\npc\cop.h">
+      <Filter>src\display\npc</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
