@@ -21,6 +21,14 @@ void Game::setup(b2World * _world, Arduino * _arduino)
 	canvas.begin();  
         ofClear(255, 255, 255, 0);  
     canvas.end();
+
+	//bomb
+	#ifdef TARGET_OPENGLES
+	bombCanvas.allocate(WIDTH, HEIGHT, GL_RGBA);
+	ofLogWarning("ofApp") << "GL_RGBA32F_ARB is not available for OPENGLES.  Using RGBA.";        
+	#else
+	bombCanvas.allocate(WIDTH, HEIGHT, GL_RGBA32F_ARB);
+	#endif
     
     //largada
     largada.addFile("images/largada/1.png");
@@ -83,12 +91,20 @@ void Game::update()
 		humans[i]->update();
 	}
     
+	//bomb
+	for(int i=bombs.size()-1; i >= 0; i--){
+		if(bombs[i].hasComplete()){
+			bombs.erase(bombs.begin() + i);
+		}else{
+			bombs[i].update();
+		}
+	}
 }
 
 //--------------------------------------------------------------
 void Game::draw() 
 {
-    ofPopStyle();
+    ofPushStyle();
     
     //trace
     background.draw(0, 0);
@@ -117,7 +133,6 @@ void Game::draw()
 	canvas.end();
     ofSetColor(255);
 	canvas.draw(0,0);
-    ofPushStyle();
     
     //players
     ofSetColor(255);
@@ -154,6 +169,19 @@ void Game::draw()
 	for (int i=0; i<humans.size(); i++) {
 		humans[i]->draw();
 	}
+
+	//bomb
+	bombCanvas.begin();
+	ofSetColor(255, 255, 255, 10);
+    ofRect(0, 0, WIDTH, HEIGHT);
+	ofSetColor(255);
+	for(int i=0; i < bombs.size(); i++){
+		bombs[i].draw();
+	}
+	bombCanvas.end();
+	bombCanvas.draw(0, 0);
+	
+    ofPopStyle();
 }
 
 //--------------------------------------------------------------
@@ -206,6 +234,7 @@ void Game::mouseDragged(int x, int y, int button)
 void Game::mousePressed(int x, int y, int button)
 {
     cop * c = new cop();
+    ofAddListener(c->onAttack, this, &Game::onCopAttack);
     c->setup(world, &playerList);
     humans.push_back((human *)c);
 }
@@ -226,3 +255,9 @@ void Game::startGame()
     canvas.end();
 }
 
+void Game::onCopAttack(attack & a)
+{
+	bomb b;
+	b.setup(a.startX, a.startY, a.endX, a.endY);
+	bombs.push_back(b);
+}

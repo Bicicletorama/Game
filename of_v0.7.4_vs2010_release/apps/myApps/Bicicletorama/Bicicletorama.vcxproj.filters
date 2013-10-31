@@ -1130,5 +1130,8 @@
     <ClInclude Include="src\display\npc\cop.h">
       <Filter>src\display\npc</Filter>
     </ClInclude>
+    <ClInclude Include="src\display\npc\bomb.h">
+      <Filter>src\display\npc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

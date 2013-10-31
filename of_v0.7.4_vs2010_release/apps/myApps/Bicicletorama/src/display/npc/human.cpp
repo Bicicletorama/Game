@@ -110,6 +110,12 @@ void human::changeState(states _state){
         case ATTACKING:
 			MIN_CHANGE_TIME = 1000;
 			sprite = &spriteAttacking;
+			attack a;
+				a.startX = x;
+				a.startY = y;
+				a.endX = playerList[closestPlayer]->x;
+				a.endY = playerList[closestPlayer]->y;
+			ofNotifyEvent(onAttack, a);
             break;	
         case DYING:
 			sprite = &spriteDying;

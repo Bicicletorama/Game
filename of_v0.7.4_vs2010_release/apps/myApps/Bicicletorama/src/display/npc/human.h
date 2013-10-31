@@ -6,9 +6,17 @@
 #include "Configuration.h"
 #include "player.h"
 
+struct attack {
+	float startX;
+	float startY;
+	float endX;
+	float endY;
+};
+
 class human {
         
 public:
+	ofEvent<attack> onAttack;
 
 	int MIN_CHANGE_TIME;
 

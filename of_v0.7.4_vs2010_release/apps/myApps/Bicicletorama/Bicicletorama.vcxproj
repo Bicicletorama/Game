@@ -191,6 +191,7 @@
     <ClInclude Include="src\Configuration.h" />
     <ClInclude Include="src\display\Borda.h" />
     <ClInclude Include="src\display\Menu.h" />
+    <ClInclude Include="src\display\npc\bomb.h" />
     <ClInclude Include="src\display\npc\civil.h" />
     <ClInclude Include="src\display\npc\cop.h" />
     <ClInclude Include="src\display\npc\human.h" />

@@ -6,7 +6,8 @@
 #include "Arduino.h"
 #include "player.h"
 #include "human.h"
-#include "cup.h"
+#include "cop.h"
+#include "bomb.h"
 #include "civil.h"
 #include "sound.h"
 
@@ -51,5 +52,10 @@ private:
     vector <ofxBox2dCircle>	obstaculos;
 	
     vector <human*>	humans;
+
+	void onCopAttack(attack & a);
+		
+	vector<bomb> bombs;
+	ofFbo bombCanvas;
     
 };
