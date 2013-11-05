@@ -4,6 +4,7 @@
 #include "ofxBox2d.h"
 #include "ofxSpriteManager.h"
 #include "Configuration.h"
+#include "game/GenericData.h"
 
 
 class player {
@@ -35,6 +36,9 @@ public:
     void applyImpulse();
     
     float getVelocity();
+	
+	void addPowerUp();
+	void removePowerUp();
 
     int x;
     int y;

@@ -19,7 +19,7 @@ void Bicicletorama::setup()
     
     arduino.setup();
     kinect.setup(box2d.getWorld());
-    game.setup(box2d.getWorld(), &arduino);
+    game.setup(&box2d, &arduino);
     borda.setup(&kinect.contourFinder);
     menu.setup();
     m_panel.setup(&kinect, &game);

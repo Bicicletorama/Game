@@ -40,7 +40,7 @@
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\$(Configuration)\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\$(Configuration)\</IntDir>
@@ -108,6 +108,7 @@
     <ClCompile Include="src\display\npc\human.cpp" />
     <ClCompile Include="src\display\VelStats.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\game\PowerUp.cpp" />
     <ClCompile Include="src\kinect\KinectInterface.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\player.cpp" />
@@ -197,6 +198,8 @@
     <ClInclude Include="src\display\npc\human.h" />
     <ClInclude Include="src\display\VelStats.h" />
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\game\GenericData.h" />
+    <ClInclude Include="src\game\PowerUp.h" />
     <ClInclude Include="src\kinect\KinectInterface.h" />
     <ClInclude Include="src\panelUI.h" />
     <ClInclude Include="src\player.h" />
