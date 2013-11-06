@@ -52,7 +52,7 @@ private:
     vector <ofxBox2dCircle>	obstaculos;
 	
     vector <human*>	humans;
-
+	
 	void onCopAttack(attack & a);
 		
 	vector<bomb> bombs;
@@ -66,5 +66,8 @@ private:
 	
 	void checkContactStart_powerUp(b2Fixture * a, b2Fixture * b);
 	void checkContactEnd_powerUp(b2Fixture * a, b2Fixture * b);
+	
+	void checkContactStart_cop(b2Fixture * a, b2Fixture * b);
+	void checkContactStart_civil(b2Fixture * a, b2Fixture * b);
 
 };

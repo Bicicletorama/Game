@@ -1,6 +1,11 @@
 
 #include "human.h"
 
+
+human::~human(){
+	physics.body->GetWorld()->DestroyBody( physics.body );
+}
+
 void human::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 {
 	this->playerList = playerList;
@@ -11,6 +16,8 @@ void human::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	closestPlayer = -1;
 
 	MIN_CHANGE_TIME = 5000;
+
+	completed = false;
     
 	//sprites
 	sprite = &spriteIdle;
@@ -125,9 +132,19 @@ void human::changeState(states _state){
 	lastTimeIChanged = ofGetElapsedTimeMillis();
 }
 
+bool human::hasComplete()
+{
+	return completed;
+}
+
 void human::think(){
 
 	if(ofGetElapsedTimeMillis() - lastTimeIChanged > MIN_CHANGE_TIME){
+		if(state==DYING){
+			completed = true;
+			return;
+		}
+
 		float shouldIChange = ofRandom(1.0);
 		if(shouldIChange<0.9) return;
 

@@ -5,6 +5,7 @@
 #include "ofxSpriteManager.h"
 #include "Configuration.h"
 #include "player.h"
+#include "game/GenericData.h"
 
 struct attack {
 	float startX;
@@ -16,6 +17,8 @@ struct attack {
 class human {
         
 public:
+	~human();
+	
 	ofEvent<attack> onAttack;
 
 	int MIN_CHANGE_TIME;
@@ -38,6 +41,7 @@ public:
 	enum states {IDLE, WALKING, ATTACKING, DYING};
 	int state;
 	void changeState(states _state);
+	bool hasComplete();
 
 protected:
     
@@ -47,6 +51,7 @@ protected:
     
 	//STATES
     double lastTimeIChanged;
+	bool completed;
 
 	//SPRITES
 	ofxSprite *			sprite;

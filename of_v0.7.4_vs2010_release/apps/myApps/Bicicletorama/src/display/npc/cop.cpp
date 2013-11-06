@@ -26,6 +26,8 @@ void cop::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	spriteWalking.play();
 	spriteAttacking.play();
 	spriteDying.play();
+
+	spriteDying.setLoop(false);
 	
 	spriteIdle.setFrameRate(2);
 	spriteWalking.setFrameRate(6);
@@ -33,6 +35,7 @@ void cop::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	spriteDying.setFrameRate(2);
 
 	human::setup(b2dworld, playerList);
+	physics.setData(new GenericData("cop", this));
 }
 
 void cop::update()

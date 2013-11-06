@@ -18,8 +18,6 @@ public:
 		totalSteps = 60;
 		stepsPerFrame = 3;
 		curStep = 0;
-
-		completed = false;
 		
 		sprite.addFile("images/human/cop/explosion/0.png");
 		sprite.addFile("images/human/cop/explosion/1.png");
@@ -66,7 +64,6 @@ public:
 	}
 
 private:
-	bool completed;
     ofxSprite           sprite;
 
 	float startX;

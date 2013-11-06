@@ -6,7 +6,7 @@ void Bicicletorama::setup()
 {
     ofSetVerticalSync(true);
 	ofSetLogLevel(OF_LOG_SILENT);//(OF_LOG_NOTICE);
-    ofSetFrameRate(60);
+    ofSetFrameRate(30);
     ofEnableAlphaBlending();
     
 	box2d.init();

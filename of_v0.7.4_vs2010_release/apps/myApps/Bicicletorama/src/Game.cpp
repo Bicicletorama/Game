@@ -101,9 +101,14 @@ void Game::update()
 
 	//npc
 	for (int i=0; i<humans.size(); i++) {
-		humans[i]->update();
+		if(humans[i]->hasComplete()){
+			delete humans[i];
+			humans.erase(humans.begin() + i);
+		}else{
+			humans[i]->update();
+		}
 	}
-    
+
 	//bomb
 	for(int i=bombs.size()-1; i >= 0; i--){
 		if(bombs[i].hasComplete()){
@@ -251,10 +256,16 @@ void Game::mouseDragged(int x, int y, int button)
 //--------------------------------------------------------------
 void Game::mousePressed(int x, int y, int button)
 {
-    cop * c = new cop();
-    ofAddListener(c->onAttack, this, &Game::onCopAttack);
-    c->setup(world, &playerList);
-    humans.push_back((human *)c);
+	if(button==1){
+		cop * c = new cop();
+		ofAddListener(c->onAttack, this, &Game::onCopAttack);
+	    c->setup(world, &playerList);
+		humans.push_back((human *)c);
+	}else{
+		civil * c = new civil();
+	    c->setup(world, &playerList);
+		humans.push_back((human *)c);
+	}
 }
 
 //--------------------------------------------------------------
@@ -292,6 +303,14 @@ void Game::contactStart(ofxBox2dContactArgs &e) {
 		checkContactStart_powerUp(e.a, e.b);
 		checkContactStart_powerUp(e.b, e.a);
 
+		//cop
+		checkContactStart_cop(e.a, e.b);
+		checkContactStart_cop(e.b, e.a);
+
+		//civil
+		checkContactStart_civil(e.a, e.b);
+		checkContactStart_civil(e.b, e.a);
+
 	}
 }
 
@@ -326,6 +345,32 @@ void Game::checkContactEnd_powerUp(b2Fixture * a, b2Fixture * b)  {
 		if (dataB != NULL && dataB->name == "bike") {
 			player * p = (player*)dataB->data;
 			p->removePowerUp();
+		}
+	}
+}
+
+void Game::checkContactStart_cop(b2Fixture * a, b2Fixture * b)  {
+
+	GenericData * dataA = (GenericData*)a->GetBody()->GetUserData();
+	if (dataA != NULL && dataA->name == "cop") {
+
+		GenericData * dataB = (GenericData*)b->GetBody()->GetUserData();
+		if (dataB != NULL && dataB->name == "bike") {
+			human * h = (human*)dataA->data;
+			h->changeState(h->DYING);
+		}
+	}
+}
+
+void Game::checkContactStart_civil(b2Fixture * a, b2Fixture * b)  {
+
+	GenericData * dataA = (GenericData*)a->GetBody()->GetUserData();
+	if (dataA != NULL && dataA->name == "cop") {
+
+		GenericData * dataB = (GenericData*)b->GetBody()->GetUserData();
+		if (dataB != NULL && dataB->name == "bike") {
+			human * h = (human*)dataA->data;
+			h->changeState(h->DYING);
 		}
 	}
 }
