@@ -10,13 +10,15 @@
 #include "bomb.h"
 #include "civil.h"
 #include "sound.h"
+#include "game/GenericData.h"
+#include "game/PowerUp.h"
 
 
 class Game {
     
 public:
     
-    void setup(b2World * _world, Arduino * _arduino);
+    void setup(ofxBox2d * _box2d, Arduino * _arduino);
     void update();
     void draw();
     
@@ -24,16 +26,14 @@ public:
 	void mouseDragged(int x, int y, int button);
 	void mousePressed(int x, int y, int button);
     
-    void updatePlayersDirection(float direction[TOTAL_PLAYERS]);
-    void updatePlayersDistance(float distance[TOTAL_PLAYERS]);
-    
     player playerList[TOTAL_PLAYERS];
     
     
 private:
     
-    Arduino * arduino;
+	ofxBox2d * box2d;
     b2World * world;
+    Arduino * arduino;
     
     void    startGame();
     int     startGameMillis;
@@ -57,5 +57,14 @@ private:
 		
 	vector<bomb> bombs;
 	ofFbo bombCanvas;
-    
+
+    vector<PowerUp*> powerUpList;
+
+
+	void contactStart(ofxBox2dContactArgs &e);
+	void contactEnd(ofxBox2dContactArgs &e);
+	
+	void checkContactStart_powerUp(b2Fixture * a, b2Fixture * b);
+	void checkContactEnd_powerUp(b2Fixture * a, b2Fixture * b);
+
 };

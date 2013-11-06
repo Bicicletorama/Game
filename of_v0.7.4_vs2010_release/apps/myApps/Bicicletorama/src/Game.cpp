@@ -2,10 +2,15 @@
 
 
 //--------------------------------------------------------------
-void Game::setup(b2World * _world, Arduino * _arduino)
+void Game::setup(ofxBox2d * _box2d, Arduino * _arduino)
 {
-    world = _world;
+    box2d = _box2d;
+	world = box2d->getWorld();
     arduino = _arduino;
+
+    // register the listener so that we get the events
+    ofAddListener(box2d->contactStartEvents, this, &Game::contactStart);
+    ofAddListener(box2d->contactEndEvents, this, &Game::contactEnd);
     
     //background
 	background.loadImage("images/background.jpg");
@@ -50,6 +55,9 @@ void Game::setup(b2World * _world, Arduino * _arduino)
     
     //timer
     lastGameTimer = -1;
+
+
+	powerUpList.push_back(new PowerUp(world));
 	
 }
 
@@ -66,6 +74,11 @@ void Game::update()
             sound::playAlerta();
         }
     }
+    
+	//power up
+	for(int i=powerUpList.size()-1; i >= 0; i--){
+		powerUpList[i]->update();
+	}
     
     //players
     if (!locked)
@@ -134,6 +147,11 @@ void Game::draw()
     ofSetColor(255);
 	canvas.draw(0,0);
     
+	//powerup
+	for(int i=powerUpList.size()-1; i >= 0; i--){
+		powerUpList[i]->draw();
+	}
+
     //players
     ofSetColor(255);
 	for (int i=0; i<TOTAL_PLAYERS; i++) {
@@ -260,4 +278,54 @@ void Game::onCopAttack(attack & a)
 	bomb b;
 	b.setup(a.startX, a.startY, a.endX, a.endY);
 	bombs.push_back(b);
+}
+
+
+//--------------------------------------------------------------
+// Box2D Contact System
+//--------------------------------------------------------------
+
+void Game::contactStart(ofxBox2dContactArgs &e) {
+	if(e.a != NULL && e.b != NULL) {
+		
+		//power up
+		checkContactStart_powerUp(e.a, e.b);
+		checkContactStart_powerUp(e.b, e.a);
+
+	}
+}
+
+void Game::contactEnd(ofxBox2dContactArgs &e) {
+    if(e.a != NULL && e.b != NULL) { 
+		
+		//power up
+		checkContactEnd_powerUp(e.a, e.b);
+		checkContactEnd_powerUp(e.b, e.a);
+    }
+}
+
+void Game::checkContactStart_powerUp(b2Fixture * a, b2Fixture * b)  {
+
+	GenericData * dataA = (GenericData*)a->GetBody()->GetUserData();
+	if (dataA != NULL && dataA->name == "powerup") {
+
+		GenericData * dataB = (GenericData*)b->GetBody()->GetUserData();
+		if (dataB != NULL && dataB->name == "bike") {
+			player * p = (player*)dataB->data;
+			p->addPowerUp();
+		}
+	}
+}
+
+void Game::checkContactEnd_powerUp(b2Fixture * a, b2Fixture * b)  {
+
+	GenericData * dataA = (GenericData *)(a->GetBody()->GetUserData());
+	if (dataA != NULL && dataA->name == "powerup") {
+
+		GenericData * dataB = (GenericData *)(b->GetBody()->GetUserData());
+		if (dataB != NULL && dataB->name == "bike") {
+			player * p = (player*)dataB->data;
+			p->removePowerUp();
+		}
+	}
 }

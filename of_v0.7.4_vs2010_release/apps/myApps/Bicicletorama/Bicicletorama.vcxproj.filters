@@ -256,6 +256,9 @@
     <ClCompile Include="src\display\npc\cop.cpp">
       <Filter>src\display\npc</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\PowerUp.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -434,6 +437,9 @@
     </Filter>
     <Filter Include="src\display\npc">
       <UniqueIdentifier>{82a6b208-5527-4a72-9799-e2f22ef3b9ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{2cc2ac13-7089-410b-95bc-2bd165d19cfa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1132,6 +1138,12 @@
     </ClInclude>
     <ClInclude Include="src\display\npc\bomb.h">
       <Filter>src\display\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\PowerUp.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\GenericData.h">
+      <Filter>src\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

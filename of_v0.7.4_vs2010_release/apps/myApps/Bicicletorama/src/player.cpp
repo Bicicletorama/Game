@@ -69,12 +69,15 @@ void player::setup(int _playerID, b2World * b2dworld)
     //box2d
     bike.setPhysics(BIKE_DENSITY, BIKE_BOUNCE, BIKE_FRICTION);
     bike.setup(b2dworld, 0, 0, BIKE_WIDTH, BIKE_HEIGHT);
+	bike.setData(new GenericData("bike", this));
     
     frontWheel.setPhysics(BIKE_DENSITY, BIKE_BOUNCE, BIKE_FRICTION);
     frontWheel.setup(b2dworld, 0, -BIKE_HEIGHT, WHEEL_WIDTH, WHEEL_HEIGHT);
+	frontWheel.setData(new GenericData("frontWheel", this));
     
     rearWheel.setPhysics(BIKE_DENSITY, BIKE_BOUNCE, BIKE_FRICTION);
-    rearWheel.setup(b2dworld, 0, +BIKE_HEIGHT, WHEEL_WIDTH, WHEEL_HEIGHT);    
+    rearWheel.setup(b2dworld, 0, +BIKE_HEIGHT, WHEEL_WIDTH, WHEEL_HEIGHT); 
+	rearWheel.setData(new GenericData("rearWheel", this));  
     
     b2RevoluteJointDef* frontJointDef = new b2RevoluteJointDef();
     frontJointDef->Initialize(bike.body, frontWheel.body, frontWheel.body->GetWorldCenter());
@@ -165,6 +168,16 @@ void player::applyImpulse()
     lastImpulseTime = ofGetElapsedTimeMillis();
     
     spriteBike.nextFrame();
+}
+
+void player::addPowerUp()
+{
+	HORSEPOWERS *= 4;
+}
+
+void player::removePowerUp()
+{
+	HORSEPOWERS /= 4;
 }
 
 void player::update()
