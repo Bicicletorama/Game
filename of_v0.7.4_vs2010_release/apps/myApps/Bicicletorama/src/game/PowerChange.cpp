@@ -8,7 +8,7 @@ void PowerChange::setup(b2World * b2dworld, float isPowerUp)
 	if (isPowerUp) {
 		//power up
 		value = 3.f;
-		box.setup(b2dworld, 0, 0, 30, 30);
+		box.setup(b2dworld, 0, 0, 50, 20);
 	} 
 	else {
 		//power down
@@ -22,7 +22,7 @@ void PowerChange::setup(b2World * b2dworld, float isPowerUp)
 void PowerChange::update() 
 {
 	if (enabled && ofGetElapsedTimeMillis() - millis > POWER_CHANGE_LIFE_TIME) {
-		box.setPosition(-9999,-9999); //leave it outside the window to remove
+		box.setPosition(-9999,-9999); //leave it outside the window to remove //TODO trabalhar com b2Body->SetAwake()
 		enabled = false;
 	}
 }
@@ -36,7 +36,7 @@ void PowerChange::draw()
 
 void PowerChange::showAt(float x, float y) 
 {
-	box.setPosition(x,y);
+	box.body->SetTransform(b2Vec2(b2dNum(x), b2dNum(y)), ofRandom(PI));
 	millis = ofGetElapsedTimeMillis();
 	enabled = true;
 }
