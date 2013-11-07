@@ -37,8 +37,8 @@ public:
     
     float getVelocity();
 	
-	void addPowerUp();
-	void removePowerUp();
+	void addPowerChange(float value);
+	void removePowerChange(float value);
 
     int x;
     int y;

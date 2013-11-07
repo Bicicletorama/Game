@@ -170,14 +170,16 @@ void player::applyImpulse()
     spriteBike.nextFrame();
 }
 
-void player::addPowerUp()
+void player::addPowerChange(float value)
 {
-	HORSEPOWERS *= 4;
+	HORSEPOWERS *= value;
+	cout << "ADD " << HORSEPOWERS <<endl; 
 }
 
-void player::removePowerUp()
+void player::removePowerChange(float value)
 {
-	HORSEPOWERS /= 4;
+	HORSEPOWERS /= value;
+	cout << "REMOVE " << HORSEPOWERS <<endl; 
 }
 
 void player::update()

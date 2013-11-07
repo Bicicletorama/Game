@@ -256,7 +256,7 @@
     <ClCompile Include="src\display\npc\cop.cpp">
       <Filter>src\display\npc</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\PowerUp.cpp">
+    <ClCompile Include="src\game\PowerChange.cpp">
       <Filter>src\game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1139,10 +1139,10 @@
     <ClInclude Include="src\display\npc\bomb.h">
       <Filter>src\display\npc</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\PowerUp.h">
+    <ClInclude Include="src\game\GenericData.h">
       <Filter>src\game</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\GenericData.h">
+    <ClInclude Include="src\game\PowerChange.h">
       <Filter>src\game</Filter>
     </ClInclude>
   </ItemGroup>

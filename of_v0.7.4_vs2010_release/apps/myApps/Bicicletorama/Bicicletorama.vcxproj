@@ -108,7 +108,7 @@
     <ClCompile Include="src\display\npc\human.cpp" />
     <ClCompile Include="src\display\VelStats.cpp" />
     <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\game\PowerUp.cpp" />
+    <ClCompile Include="src\game\PowerChange.cpp" />
     <ClCompile Include="src\kinect\KinectInterface.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\player.cpp" />
@@ -199,7 +199,7 @@
     <ClInclude Include="src\display\VelStats.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\game\GenericData.h" />
-    <ClInclude Include="src\game\PowerUp.h" />
+    <ClInclude Include="src\game\PowerChange.h" />
     <ClInclude Include="src\kinect\KinectInterface.h" />
     <ClInclude Include="src\panelUI.h" />
     <ClInclude Include="src\player.h" />

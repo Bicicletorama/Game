@@ -11,7 +11,7 @@
 #include "civil.h"
 #include "sound.h"
 #include "game/GenericData.h"
-#include "game/PowerUp.h"
+#include "game/PowerChange.h"
 
 
 class Game {
@@ -57,8 +57,9 @@ private:
 		
 	vector<bomb> bombs;
 	ofFbo bombCanvas;
-
-    vector<PowerUp*> powerUpList;
+	
+    PowerChange powerUp;
+    PowerChange powerDown;
 
 
 	void contactStart(ofxBox2dContactArgs &e);

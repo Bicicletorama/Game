@@ -55,9 +55,9 @@ void Game::setup(ofxBox2d * _box2d, Arduino * _arduino)
     
     //timer
     lastGameTimer = -1;
-
-
-	powerUpList.push_back(new PowerUp(world));
+	
+	powerUp.setup(world, true);
+	powerDown.setup(world, false); 
 	
 }
 
@@ -75,9 +75,15 @@ void Game::update()
         }
     }
     
-	//power up
-	for(int i=powerUpList.size()-1; i >= 0; i--){
-		powerUpList[i]->update();
+	//power change
+	powerUp.update();
+	if (!powerUp.enabled && ofRandom(1) < POWER_CHANGE_PERCENT_SHOW) {
+		powerUp.showAt(ofRandom(WIDTH), ofRandom(HEIGHT));
+	}
+
+	powerDown.update();
+	if (!powerDown.enabled && ofRandom(1) < POWER_CHANGE_PERCENT_SHOW) {
+		powerDown.showAt(ofRandom(WIDTH), ofRandom(HEIGHT));
 	}
     
     //players
@@ -147,10 +153,9 @@ void Game::draw()
     ofSetColor(255);
 	canvas.draw(0,0);
     
-	//powerup
-	for(int i=powerUpList.size()-1; i >= 0; i--){
-		powerUpList[i]->draw();
-	}
+	//power change
+	powerUp.draw();
+	powerDown.draw();
 
     //players
     ofSetColor(255);
@@ -291,7 +296,6 @@ void Game::contactStart(ofxBox2dContactArgs &e) {
 		//power up
 		checkContactStart_powerUp(e.a, e.b);
 		checkContactStart_powerUp(e.b, e.a);
-
 	}
 }
 
@@ -307,12 +311,13 @@ void Game::contactEnd(ofxBox2dContactArgs &e) {
 void Game::checkContactStart_powerUp(b2Fixture * a, b2Fixture * b)  {
 
 	GenericData * dataA = (GenericData*)a->GetBody()->GetUserData();
-	if (dataA != NULL && dataA->name == "powerup") {
+	if (dataA != NULL && dataA->name == "powerChange") {
 
 		GenericData * dataB = (GenericData*)b->GetBody()->GetUserData();
 		if (dataB != NULL && dataB->name == "bike") {
+
 			player * p = (player*)dataB->data;
-			p->addPowerUp();
+			p->addPowerChange(*(float*)dataA->data);
 		}
 	}
 }
@@ -320,12 +325,13 @@ void Game::checkContactStart_powerUp(b2Fixture * a, b2Fixture * b)  {
 void Game::checkContactEnd_powerUp(b2Fixture * a, b2Fixture * b)  {
 
 	GenericData * dataA = (GenericData *)(a->GetBody()->GetUserData());
-	if (dataA != NULL && dataA->name == "powerup") {
+	if (dataA != NULL && dataA->name == "powerChange") {
 
 		GenericData * dataB = (GenericData *)(b->GetBody()->GetUserData());
 		if (dataB != NULL && dataB->name == "bike") {
+
 			player * p = (player*)dataB->data;
-			p->removePowerUp();
+			p->removePowerChange(*(float*)dataA->data);
 		}
 	}
 }
