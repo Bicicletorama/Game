@@ -9,8 +9,11 @@
 class PowerChange {
 
 public:
+
+	PowerChange();
+	~PowerChange();
 	
-	void setup(b2World * b2dworld, float isPowerUp);
+	void setup(b2World * world, float isPowerUp);
 	void update();
 	void draw();
 	
@@ -24,6 +27,6 @@ protected:
 	int millis;
 
 	ofImage image;
-    ofxBox2dRect box;
+    ofxBox2dBaseShape * body;
 
 };

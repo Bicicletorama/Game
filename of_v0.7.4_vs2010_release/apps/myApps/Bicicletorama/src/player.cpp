@@ -173,13 +173,11 @@ void player::applyImpulse()
 void player::addPowerChange(float value)
 {
 	HORSEPOWERS *= value;
-	cout << "ADD " << HORSEPOWERS <<endl; 
 }
 
 void player::removePowerChange(float value)
 {
 	HORSEPOWERS /= value;
-	cout << "REMOVE " << HORSEPOWERS <<endl; 
 }
 
 void player::update()
