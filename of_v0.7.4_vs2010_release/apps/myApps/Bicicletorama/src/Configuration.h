@@ -9,3 +9,7 @@
 
 #define KINECT_WIDTH 640
 #define KINECT_HEIGHT 480
+
+
+#define POWER_CHANGE_PERCENT_SHOW 0.5 //[0-1]
+#define POWER_CHANGE_LIFE_TIME 5000 //millis
