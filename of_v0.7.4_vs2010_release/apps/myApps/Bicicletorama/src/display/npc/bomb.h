@@ -2,22 +2,22 @@
 
 #include "ofMain.h"
 #include "ofxSpriteManager.h"
+#include "ofxTweenzor.h"
 
 class bomb : public ofBaseApp{
 public:
 	void setup(float xIn, float yIn, float xOut, float yOut)
-	{
-		startX = xIn;
-		startY = yIn;
-		endX = xOut;
-		endY = yOut;
+	{	
+		x = xIn;
+		y = yIn;
+		time = 0.0f;
+		rotation = ofRandom(360);
 		
-		diffX = startX - endX;
-		diffY = startY - endY;
-
-		totalSteps = 60;
-		stepsPerFrame = 3;
-		curStep = 0;
+		Tweenzor::add(&x, x, xOut, 0.f, 2.f, EASE_OUT_QUAD);
+		Tweenzor::add(&y, y, yOut, 0.f, 2.f, EASE_OUT_QUAD);
+		Tweenzor::add(&rotation, rotation, rotation+ofRandom(360), 0.f, 2.f);
+		Tweenzor::add(&time, time, 1.f, 0.f, 2.f, EASE_OUT_BOUNCE);
+        Tweenzor::addCompleteListener( Tweenzor::getTween(&time), this, &bomb::onTweenComplete);
 		
 		sprite.addFile("images/human/cop/explosion/0.png");
 		sprite.addFile("images/human/cop/explosion/1.png");
@@ -34,48 +34,40 @@ public:
 		sprite.setLoop(false);
 		sprite.setFrameRate(6);
 		sprite.setAnchorPercent(0.5, 0.5);
+	
+		exploded = false;
 	}
 
 	void update()
 	{
-		if(curStep==totalSteps){
+		scale = sin(PI*time)+1;
+		if(exploded){
 			sprite.update();
 		}
 	}
 
 	void draw()
 	{
-		if(curStep<totalSteps){
-			for(int i=0; i<stepsPerFrame && curStep<totalSteps; i++){
-				sprite.draw(ofVec2f(
-					startX - (diffX*curStep/totalSteps),
-					startY - (diffY*curStep/totalSteps)
-				));
-				curStep++;
-			}
-		}else{
-			sprite.draw(endX, endY);
-		}
+		ofPushMatrix();
+			ofTranslate(x, y);
+			ofRotate(rotation);
+			ofScale(scale, scale);
+			sprite.draw();
+		ofPopMatrix();
 	}
 
 	bool hasComplete()
 	{
-		return !sprite.getIsPlaying();
+		return exploded && !sprite.getIsPlaying();
 	}
 
 private:
     ofxSprite           sprite;
 
-	float startX;
-	float startY;
+	float x, y, scale, rotation, time;
+	bool exploded;
 
-	float endX;
-	float endY;
-
-	float diffX;
-	float diffY;
-
-	float curStep;
-	float stepsPerFrame;
-	float totalSteps;
+	void onTweenComplete(float* arg) {
+		exploded = true;
+	}
 };

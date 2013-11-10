@@ -117,10 +117,11 @@ void Game::update()
 
 	//bomb
 	for(int i=bombs.size()-1; i >= 0; i--){
-		if(bombs[i].hasComplete()){
+		if(bombs[i]->hasComplete()){
+			delete bombs[i];
 			bombs.erase(bombs.begin() + i);
 		}else{
-			bombs[i].update();
+			bombs[i]->update();
 		}
 	}
 }
@@ -204,7 +205,7 @@ void Game::draw()
     ofRect(0, 0, WIDTH, HEIGHT);
 	ofSetColor(255);
 	for(int i=0; i < bombs.size(); i++){
-		bombs[i].draw();
+		bombs[i]->draw();
 	}
 	bombCanvas.end();
 	bombCanvas.draw(0, 0);
@@ -291,8 +292,8 @@ void Game::startGame()
 
 void Game::onCopAttack(attack & a)
 {
-	bomb b;
-	b.setup(a.startX, a.startY, a.endX, a.endY);
+	bomb * b = new bomb();
+	b->setup(a.startX, a.startY, a.endX, a.endY);
 	bombs.push_back(b);
 }
 

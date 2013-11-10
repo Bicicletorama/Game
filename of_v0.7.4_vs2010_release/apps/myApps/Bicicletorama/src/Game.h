@@ -55,7 +55,7 @@ private:
 	
 	void onCopAttack(attack & a);
 		
-	vector<bomb> bombs;
+	vector<bomb*> bombs;
 	ofFbo bombCanvas;
 	
     PowerChange powerUp;
