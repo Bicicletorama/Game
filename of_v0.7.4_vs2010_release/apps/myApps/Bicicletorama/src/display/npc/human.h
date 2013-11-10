@@ -38,6 +38,10 @@ public:
 	//PHYSICS
     ofxBox2dRect        physics;
 
+	//TYPES
+	enum types {COP, CIVIL};
+	int type;
+
 	//STATES
 	enum states {IDLE, WALKING, ATTACKING, DYING, LEAVING};
 	int state;
@@ -48,6 +52,7 @@ protected:
     
 	//AI
 	void think();
+	virtual void doSomething();
 	void startAtRandomPosition();
     
 	//STATES
@@ -72,13 +77,10 @@ protected:
 	void updateRotation();
 	float getDegrees(float radians);
 	float getRadians(float delta_x, float delta_y);
-	
-    int oldX;
-    int oldY;
 
 	int destX;
 	int destY;
 
 	float distX;
-	float distY;  
+	float distY; 
 };

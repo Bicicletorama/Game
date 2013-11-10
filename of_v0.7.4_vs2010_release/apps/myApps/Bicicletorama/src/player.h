@@ -36,6 +36,8 @@ public:
     void applyImpulse();
     
     float getVelocity();
+
+	bool isActive();
 	
 	void addPowerChange(float value);
 	void removePowerChange(float value);

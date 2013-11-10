@@ -36,7 +36,11 @@ public:
 				delete humans[i];
 				humans.erase(humans.begin() + i);
 			}else{
-				humans[i]->update();
+				if(humans[i]->type==humans[i]->COP){
+					((cop *)humans[i])->update();
+				}else if(humans[i]->type==humans[i]->CIVIL){
+					((civil *)humans[i])->update();
+				}
 			}
 		}
 
@@ -60,7 +64,11 @@ public:
 	{
 		//humans
 		for (int i=0; i<humans.size(); i++) {
-			humans[i]->draw();
+			if(humans[i]->type==humans[i]->COP){
+				((cop *)humans[i])->draw();
+			}else if(humans[i]->type==humans[i]->CIVIL){
+				((civil *)humans[i])->draw();
+			}
 		}
 
 		//bomb

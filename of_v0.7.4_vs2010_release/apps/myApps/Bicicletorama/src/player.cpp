@@ -251,4 +251,7 @@ float player::getVelocity()
     return (vel > 0.01) ? vel : 0;
 }
 
-
+bool player::isActive()
+{
+	return !idle;
+}

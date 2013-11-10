@@ -81,34 +81,6 @@ void human::leave()
 
 void human::update()
 {
-	think();
-	
-    oldX = x;
-    oldY = y;
-
-	switch (state) 
-    {
-		case IDLE:
-			x = physics.getPosition().x;
-			y = physics.getPosition().y;
-			break;
-        case WALKING:
-        case LEAVING:
-			updatePosition();
-			updateRotation();
-			physics.body->SetTransform(b2Vec2(b2dNum(x), b2dNum(y)), rotation);
-			break;	
-		case ATTACKING:
-			destX = playerList[closestPlayer]->x;
-			destY = playerList[closestPlayer]->y;
-			updateRotation();
-			physics.body->SetTransform(b2Vec2(b2dNum(x), b2dNum(y)), rotation);
-			break;
-        case DYING:
-			break;
-    }
-    
-
     sprite->update();
     sprite->setRotation(physics.getRotation());
     sprite->setPosition(physics.getPosition());
@@ -116,21 +88,14 @@ void human::update()
 
 void human::draw() 
 {
-    ofPushStyle();
-    
-	ofSetColor(255);
-    
-    //physics
-    sprite->draw();
-    
-    ofPopStyle();
+	sprite->draw();
 }
 
 
 void human::changeState(states _state){
 	state = _state;
 
-	switch (state) 
+	switch (state)
     {
 		case IDLE:
 			MIN_CHANGE_TIME = 3000;
@@ -150,8 +115,8 @@ void human::changeState(states _state){
 			attack a;
 				a.startX = x;
 				a.startY = y;
-				a.endX = playerList[closestPlayer]->x;
-				a.endY = playerList[closestPlayer]->y;
+				a.endX = (*playerList)[closestPlayer].x;
+				a.endY = (*playerList)[closestPlayer].y;
 			ofNotifyEvent(onAttack, a);
             break;	
         case DYING:
@@ -178,58 +143,24 @@ void human::think(){
 		float shouldIChange = ofRandom(1.0);
 		if(shouldIChange<0.9) return;
 
-		closestPlayer = findClosestPlayer(x, y);
-		if(closestPlayer==-1){
-			//there is nobody close to you, go walk
-			destX = ofRandom(WIDTH);
-			destY = ofRandom(HEIGHT);
-			changeState(WALKING);
-			return;
-		}
-
-		int closestDistance = playerDistance(closestPlayer, x, y);
-
-		//if target is near run away
-		if(closestDistance<40000){//200*200=40000
-			//find a place that there is no player close
-			destX = ofRandom(WIDTH);
-			destY = ofRandom(HEIGHT);
-			int tries = 0;
-			while(playerDistance(findClosestPlayer(destX, destY), destX, destY)<10000 && tries<10){
-				destX = ofRandom(WIDTH);
-				destY = ofRandom(HEIGHT);
-				tries++;
-			}
-			changeState(WALKING);
-
-		//if target is too far walk or idle
-		}else if(closestDistance>160000){////400*400=160000
-			if(state==WALKING){
-				changeState(IDLE);
-			}else{
-				destX = playerList[closestPlayer]->x;
-				destY = playerList[closestPlayer]->y;
-				changeState(WALKING);
-			}
-		
-		//if target is in a safe distance
-		}else{
-			if(state==ATTACKING) changeState(IDLE);
-			else changeState(ATTACKING);
-		}
+		doSomething();
 	}
 }
 
-int human::findClosestPlayer(int _x, int _y){
-	return 0;
+void human::doSomething(){
+	//override it
+}
 
+int human::findClosestPlayer(int _x, int _y){
 	int foundIndex = -1;
 	int dist=1000000;
 	for(int i=0; i<TOTAL_PLAYERS; i++){
-		int tempDist = playerDistance(i, _x, _y);
-		if(tempDist<dist && tempDist>0){
-			foundIndex = i;
-			dist = tempDist;
+		if((*playerList)[i].isActive()) {
+			int tempDist = playerDistance(i, _x, _y);
+			if(tempDist<dist && tempDist>0){
+				foundIndex = i;
+				dist = tempDist;
+			}
 		}
 	}
 
@@ -237,7 +168,7 @@ int human::findClosestPlayer(int _x, int _y){
 }
 
 int human::playerDistance(int playerIndex, int _x, int _y){
-	return ofDistSquared(playerList[playerIndex]->x, playerList[playerIndex]->y, _x, _y);
+	return ofDistSquared((*playerList)[playerIndex].x, (*playerList)[playerIndex].y, _x, _y);
 }
 
 void human::updatePosition(){
