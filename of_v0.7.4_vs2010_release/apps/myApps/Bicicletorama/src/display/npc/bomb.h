@@ -4,7 +4,7 @@
 #include "ofxSpriteManager.h"
 #include "ofxTweenzor.h"
 
-class bomb : public ofBaseApp{
+class bomb{
 public:
 	void setup(float xIn, float yIn, float xOut, float yOut)
 	{	

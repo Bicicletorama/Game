@@ -10,6 +10,7 @@
 #include "bomb.h"
 #include "civil.h"
 #include "sound.h"
+#include "game/NPCControl.h"
 #include "game/GenericData.h"
 #include "game/PowerChange.h"
 
@@ -27,6 +28,12 @@ public:
 	void mousePressed(int x, int y, int button);
     
     player playerList[TOTAL_PLAYERS];
+
+	//STATES
+	enum states {RACE, RIOT};
+	states state;
+	void toggleState();
+	void changeState(states state);
     
     
 private:
@@ -50,13 +57,10 @@ private:
     int currentCabeca;
     
     vector <ofxBox2dCircle>	obstaculos;
-	
-    vector <human*>	humans;
+
+	NPCControl aiControl;
 	
 	void onCopAttack(attack & a);
-		
-	vector<bomb*> bombs;
-	ofFbo bombCanvas;
 	
     PowerChange powerUp;
     PowerChange powerDown;

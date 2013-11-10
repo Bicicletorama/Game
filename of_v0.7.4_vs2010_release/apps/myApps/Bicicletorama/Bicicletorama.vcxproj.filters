@@ -1175,5 +1175,8 @@
     <ClInclude Include="..\..\..\addons\ofxTweenzor\src\Tweenzor.h">
       <Filter>addons\ofxTweenzor\src</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\NPCControl.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

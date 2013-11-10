@@ -35,11 +35,11 @@ void human::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
  
 	rotation = 0;
 
-	goToRandomPosition();
+	startAtRandomPosition();
 }
 
-void human::goToRandomPosition() 
-{   
+void human::startAtRandomPosition() 
+{
 	int margin = 10;
 	float whereToGo = ofRandom(1.0);
 	//TOP
@@ -52,6 +52,31 @@ void human::goToRandomPosition()
 	else					physics.body->SetTransform(b2Vec2(b2dNum(-margin), b2dNum(ofRandom(HEIGHT))), 0);
 	
     changeState(IDLE);
+}
+
+void human::leave() 
+{
+	int margin = 50;
+	float whereToGo = ofRandom(1.0);
+	if(whereToGo>0.75) {
+		//TOP
+		destX = ofRandom(WIDTH);
+		destY = -margin;
+	} else if(whereToGo>0.5) {
+		//RIGHT
+		destX = WIDTH+margin;
+		destY = ofRandom(HEIGHT);
+	} else if(whereToGo>0.25) {
+		//BOTTOM
+		destX = ofRandom(WIDTH);
+		destY = HEIGHT+margin;
+	} else {
+		//LEFT
+		destX = -margin;
+		destY = ofRandom(HEIGHT);
+	}
+	
+    changeState(LEAVING);
 }
 
 void human::update()
@@ -68,6 +93,7 @@ void human::update()
 			y = physics.getPosition().y;
 			break;
         case WALKING:
+        case LEAVING:
 			updatePosition();
 			updateRotation();
 			physics.body->SetTransform(b2Vec2(b2dNum(x), b2dNum(y)), rotation);
@@ -114,6 +140,10 @@ void human::changeState(states _state){
 			MIN_CHANGE_TIME = 5000;
 			sprite = &spriteWalking;
             break;	
+        case LEAVING:
+			MIN_CHANGE_TIME = 15000;
+			sprite = &spriteWalking;
+            break;	
         case ATTACKING:
 			MIN_CHANGE_TIME = 1000;
 			sprite = &spriteAttacking;
@@ -140,7 +170,7 @@ bool human::hasComplete()
 void human::think(){
 
 	if(ofGetElapsedTimeMillis() - lastTimeIChanged > MIN_CHANGE_TIME){
-		if(state==DYING){
+		if(state==DYING || state==LEAVING){
 			completed = true;
 			return;
 		}

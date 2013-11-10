@@ -26,14 +26,6 @@ void Game::setup(ofxBox2d * _box2d, Arduino * _arduino)
 	canvas.begin();  
         ofClear(255, 255, 255, 0);  
     canvas.end();
-
-	//bomb
-	#ifdef TARGET_OPENGLES
-	bombCanvas.allocate(WIDTH, HEIGHT, GL_RGBA);
-	ofLogWarning("ofApp") << "GL_RGBA32F_ARB is not available for OPENGLES.  Using RGBA.";        
-	#else
-	bombCanvas.allocate(WIDTH, HEIGHT, GL_RGBA32F_ARB);
-	#endif
     
     //largada
     largada.addFile("images/largada/1.png");
@@ -59,6 +51,9 @@ void Game::setup(ofxBox2d * _box2d, Arduino * _arduino)
 	powerUp.setup(world, true);
 	powerDown.setup(world, false); 
 	
+
+	//npc
+	aiControl.setup(world, &playerList);
 }
 
 //--------------------------------------------------------------
@@ -104,26 +99,9 @@ void Game::update()
             playerList[i].update();
         }
     }
-
+	
 	//npc
-	for (int i=0; i<humans.size(); i++) {
-		if(humans[i]->hasComplete()){
-			delete humans[i];
-			humans.erase(humans.begin() + i);
-		}else{
-			humans[i]->update();
-		}
-	}
-
-	//bomb
-	for(int i=bombs.size()-1; i >= 0; i--){
-		if(bombs[i]->hasComplete()){
-			delete bombs[i];
-			bombs.erase(bombs.begin() + i);
-		}else{
-			bombs[i]->update();
-		}
-	}
+	aiControl.update();
 }
 
 //--------------------------------------------------------------
@@ -153,7 +131,7 @@ void Game::draw()
                     }
                 }
             }
-        }		
+        }
 	}
 	canvas.end();
     ofSetColor(255);
@@ -168,6 +146,9 @@ void Game::draw()
 	for (int i=0; i<TOTAL_PLAYERS; i++) {
         playerList[i].draw();   
     }
+
+	//npc
+	aiControl.draw();
     
     //obstaculos
 	for (int i=0; i<obstaculos.size(); i++) {
@@ -193,22 +174,6 @@ void Game::draw()
             locked = false;
         }
     }
-
-	//npc
-	for (int i=0; i<humans.size(); i++) {
-		humans[i]->draw();
-	}
-
-	//bomb
-	bombCanvas.begin();
-	ofSetColor(255, 255, 255, 10);
-    ofRect(0, 0, WIDTH, HEIGHT);
-	ofSetColor(255);
-	for(int i=0; i < bombs.size(); i++){
-		bombs[i]->draw();
-	}
-	bombCanvas.end();
-	bombCanvas.draw(0, 0);
 	
     ofPopStyle();
 }
@@ -217,6 +182,7 @@ void Game::draw()
 void Game::keyReleased(int key) 
 {    
     if (key == 'p') startGame();
+    if (key == 'r') toggleState();
     
     if (!locked)
     {
@@ -263,14 +229,28 @@ void Game::mouseDragged(int x, int y, int button)
 void Game::mousePressed(int x, int y, int button)
 {
 	if(button==1){
-		cop * c = new cop();
-		ofAddListener(c->onAttack, this, &Game::onCopAttack);
-	    c->setup(world, &playerList);
-		humans.push_back((human *)c);
+		aiControl.addCop();
 	}else{
-		civil * c = new civil();
-	    c->setup(world, &playerList);
-		humans.push_back((human *)c);
+		aiControl.addCivil();
+	}
+}
+
+//--------------------------------------------------------------
+void Game::toggleState()
+{
+	if(state==RIOT) changeState(RACE);
+	else changeState(RIOT);
+}
+
+//--------------------------------------------------------------
+void Game::changeState(states state)
+{
+	this->state = state;
+
+	if(state==RIOT){
+		aiControl.start();
+	}else if(state==RACE){
+		aiControl.stop();
 	}
 }
 
@@ -288,13 +268,6 @@ void Game::startGame()
     canvas.begin();
         ofClear(0, 0, 0);
     canvas.end();
-}
-
-void Game::onCopAttack(attack & a)
-{
-	bomb * b = new bomb();
-	b->setup(a.startX, a.startY, a.endX, a.endY);
-	bombs.push_back(b);
 }
 
 

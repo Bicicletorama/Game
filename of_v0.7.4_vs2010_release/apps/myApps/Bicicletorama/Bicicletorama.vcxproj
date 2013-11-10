@@ -207,6 +207,7 @@
     <ClInclude Include="src\display\VelStats.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\game\GenericData.h" />
+    <ClInclude Include="src\game\NPCControl.h" />
     <ClInclude Include="src\game\PowerChange.h" />
     <ClInclude Include="src\kinect\KinectInterface.h" />
     <ClInclude Include="src\panelUI.h" />
