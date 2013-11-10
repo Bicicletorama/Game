@@ -14,6 +14,8 @@ void Bicicletorama::setup()
 	box2d.createBounds(20, 20, WIDTH-40, HEIGHT-40-40);//40=altura do menu; 40=borda x 2
 	box2d.setFPS(30.0);
 	box2d.registerGrabbing();
+
+	Tweenzor::init();
     
     sound::setup();
     
@@ -31,6 +33,7 @@ void Bicicletorama::update()
 {
     arduino.update();
     kinect.update();
+	Tweenzor::update( ofGetElapsedTimeMillis() );
     game.update();
     borda.update();
     menu.update(game.playerList);
@@ -88,4 +91,5 @@ void Bicicletorama::exit()
 {
     arduino.close();
     kinect.exit();
+	Tweenzor::destroy();
 }

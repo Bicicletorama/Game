@@ -11,6 +11,7 @@
 #include "ofMain.h"
 #include "ofxOpenCv.h"
 #include "ofxBox2d.h"
+#include "ofxTweenzor.h"
 #include "Configuration.h"
 #include "Arduino.h"
 #include "game.h"

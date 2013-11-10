@@ -259,6 +259,12 @@
     <ClCompile Include="src\game\PowerChange.cpp">
       <Filter>src\game</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTweenzor\src\Tween.cpp">
+      <Filter>addons\ofxTweenzor\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxTweenzor\src\Tweenzor.cpp">
+      <Filter>addons\ofxTweenzor\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -440,6 +446,12 @@
     </Filter>
     <Filter Include="src\game">
       <UniqueIdentifier>{2cc2ac13-7089-410b-95bc-2bd165d19cfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTweenzor">
+      <UniqueIdentifier>{a0ffb3a2-4ddb-4813-91df-3bbc36e66ab1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxTweenzor\src">
+      <UniqueIdentifier>{9038662d-435a-4db0-986f-ef22f95868a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1144,6 +1156,24 @@
     </ClInclude>
     <ClInclude Include="src\game\PowerChange.h">
       <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTweenzor\src\ofxTweenzor.h">
+      <Filter>addons\ofxTweenzor\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTweenzor\src\Tween.h">
+      <Filter>addons\ofxTweenzor\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTweenzor\src\TweenEvent.h">
+      <Filter>addons\ofxTweenzor\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTweenzor\src\TweenFunctions.h">
+      <Filter>addons\ofxTweenzor\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTweenzor\src\TweenSelector.h">
+      <Filter>addons\ofxTweenzor\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxTweenzor\src\Tweenzor.h">
+      <Filter>addons\ofxTweenzor\src</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
