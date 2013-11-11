@@ -42,6 +42,11 @@ void civil::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	spriteWalking.setFrameRate(6);
 	spriteAttacking.setFrameRate(6);
 	spriteDying.setFrameRate(2);
+	
+	const char* posterImages[] = {"bicicletorama.png", "bicicletorama.png", "bicicletorama.png"};
+	int roundIndex = floor(ofRandom(3));
+	string posterImage = posterImages[roundIndex];
+	poster.loadImage("images/cartazes/" + posterImage);
 
 	human::setup(b2dworld, playerList);
 	physics.setData(new GenericData("civil", this));
@@ -75,6 +80,15 @@ void civil::update()
 void civil::draw()
 {
 	human::draw();
+
+	if(state==ATTACKING) {
+		
+		ofPushMatrix();
+		ofTranslate(sprite->x, sprite->y);
+		ofRotate(sprite->rotation);
+		poster.draw(-sprite->getAnchorPoint().x, -sprite->getAnchorPoint().y);
+		ofPopMatrix();
+	}
 }
 
 void civil::doSomething(){

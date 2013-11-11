@@ -41,6 +41,7 @@ public:
     bool getIsPlaying();
     float getWidth();
     float getHeight();
+    ofPoint getAnchorPoint();
 
     ofImage& getImageAtFrame(int frame);
     ofImage& getCurrentImage();

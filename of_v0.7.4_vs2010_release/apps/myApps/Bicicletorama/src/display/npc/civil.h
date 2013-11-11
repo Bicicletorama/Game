@@ -12,4 +12,6 @@ public:
 
 protected:
 	void doSomething();
+
+	ofImage poster;
 };

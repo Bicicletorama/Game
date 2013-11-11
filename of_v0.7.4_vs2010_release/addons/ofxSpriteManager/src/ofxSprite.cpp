@@ -123,6 +123,10 @@ float ofxSprite::getHeight() {
     return getCurrentImage().getHeight();
 }
 
+ofPoint ofxSprite::getAnchorPoint() {
+    return anchorPoint;
+}
+
 void ofxSprite::draw() {
 	draw(x, y);
 }
