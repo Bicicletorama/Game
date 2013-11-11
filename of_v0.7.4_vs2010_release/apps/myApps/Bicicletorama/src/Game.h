@@ -73,6 +73,5 @@ private:
 	void checkContactEnd_powerChange(b2Fixture * a, b2Fixture * b);
 	
 	void checkContactStart_cop(b2Fixture * a, b2Fixture * b);
-	void checkContactStart_civil(b2Fixture * a, b2Fixture * b);
 
 };

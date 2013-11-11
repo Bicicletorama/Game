@@ -285,10 +285,6 @@ void Game::contactStart(ofxBox2dContactArgs &e) {
 		//cop
 		checkContactStart_cop(e.a, e.b);
 		checkContactStart_cop(e.b, e.a);
-
-		//civil
-		checkContactStart_civil(e.a, e.b);
-		checkContactStart_civil(e.b, e.a);
 	}
 }
 
@@ -335,22 +331,9 @@ void Game::checkContactStart_cop(b2Fixture * a, b2Fixture * b)  {
 	if (dataA != NULL && dataA->name == "cop") {
 
 		GenericData * dataB = (GenericData*)b->GetBody()->GetUserData();
-		if (dataB != NULL && dataB->name == "bike") {
+		if (dataB != NULL && (dataB->name == "bike" || dataB->name == "frontWheel" || dataB->name == "rearWheel")) {
 			human * h = (human*)dataA->data;
-			h->changeState(h->DYING);
-		}
-	}
-}
-
-void Game::checkContactStart_civil(b2Fixture * a, b2Fixture * b)  {
-
-	GenericData * dataA = (GenericData*)a->GetBody()->GetUserData();
-	if (dataA != NULL && dataA->name == "cop") {
-
-		GenericData * dataB = (GenericData*)b->GetBody()->GetUserData();
-		if (dataB != NULL && dataB->name == "bike") {
-			human * h = (human*)dataA->data;
-			h->changeState(h->DYING);
+			h->die();
 		}
 	}
 }
