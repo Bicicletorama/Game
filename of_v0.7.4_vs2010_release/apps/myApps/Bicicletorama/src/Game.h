@@ -29,6 +29,8 @@ public:
     
     player playerList[TOTAL_PLAYERS];
 
+	NPCControl aiControl;
+
 	//STATES
 	enum states {RACE, RIOT};
 	states state;
@@ -57,8 +59,6 @@ private:
     int currentCabeca;
     
     vector <ofxBox2dCircle>	obstaculos;
-
-	NPCControl aiControl;
 	
 	void onCopAttack(attack & a);
 	

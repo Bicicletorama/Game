@@ -7,8 +7,21 @@
 #include "bomb.h"
 #include "civil.h"
 
+struct NPCStatus{
+	float max;
+	int maxPerRound;
+	float initialAccel;
+	float deAccel;
+	float count;
+	int round;
+	float addInterval;
+};
+
 class NPCControl{
 public:
+	NPCStatus copsStatus;
+	NPCStatus civilsStatus;
+
 	void setup(b2World * world, player (* playerList)[TOTAL_PLAYERS])
 	{
 		this->playerList = playerList;
@@ -23,13 +36,28 @@ public:
 		#endif
 
 		enabled = false;
+
+		copsStatus.max = 30;
+		civilsStatus.max = 60;
+
+		copsStatus.maxPerRound = copsStatus.max * 0.2;
+		civilsStatus.maxPerRound = civilsStatus.max * 0.2;
+
+		copsStatus.initialAccel = 0.5;
+		civilsStatus.initialAccel = 1;
+
+		copsStatus.deAccel = 0.001;
+		civilsStatus.deAccel = 0.001;
 		
-		MIN_ADD_TIME_COP = 20000;
-		MIN_ADD_TIME_CIVIL = 10000;
+		copsStatus.addInterval = 15000;
+		civilsStatus.addInterval = 15000;
 	}
 
 	void update()
 	{
+		copsStatus.count = 0;
+		civilsStatus.count = 0;
+
 		//humans
 		for (int i=0; i<humans.size(); i++) {
 			if(humans[i]->hasComplete()){
@@ -38,15 +66,17 @@ public:
 			}else{
 				if(humans[i]->type==humans[i]->COP){
 					((cop *)humans[i])->update();
+					copsStatus.count++;
 				}else if(humans[i]->type==humans[i]->CIVIL){
 					((civil *)humans[i])->update();
+					civilsStatus.count++;
 				}
 			}
 		}
 
 		if(enabled){
-			if(ofGetElapsedTimeMillis() - lastTimeAddCop > MIN_ADD_TIME_COP) addCops();
-			if(ofGetElapsedTimeMillis() - lastTimeAddCivil > MIN_ADD_TIME_CIVIL) addCivils();
+			if(ofGetElapsedTimeMillis() - lastTimeAddCop > copsStatus.addInterval) addCops();
+			if(ofGetElapsedTimeMillis() - lastTimeAddCivil > civilsStatus.addInterval) addCivils();
 		}
 
 		//bomb
@@ -85,6 +115,8 @@ public:
 
 	void start()
 	{
+		copsStatus.round = 0;
+		civilsStatus.round = 0;
 		enabled = true;
 		addCops();
 		addCivils();
@@ -101,7 +133,9 @@ public:
 
 	void addCops()
 	{
-		int totalCops = ofRandom(3) + 2;
+		copsStatus.round++;
+		int totalCops = ofRandom(2) + ((copsStatus.initialAccel - (copsStatus.round * copsStatus.deAccel)) * copsStatus.round);
+		totalCops = min(totalCops, copsStatus.maxPerRound);
 		for(int i=0; i<totalCops; i++) addCop();
 	}
 
@@ -116,7 +150,9 @@ public:
 
 	void addCivils()
 	{
-		int totalCivil = ofRandom(5) + 3;
+		civilsStatus.round++;
+		int totalCivil = ofRandom(2) + ((civilsStatus.initialAccel - (civilsStatus.round * civilsStatus.deAccel)) * civilsStatus.round);
+		totalCivil = min(totalCivil, civilsStatus.maxPerRound);
 		for(int i=0; i<totalCivil; i++) addCivil();
 	}
 

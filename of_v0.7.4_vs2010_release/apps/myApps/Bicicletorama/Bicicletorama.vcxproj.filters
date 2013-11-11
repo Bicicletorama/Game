@@ -265,6 +265,9 @@
     <ClCompile Include="..\..\..\addons\ofxTweenzor\src\Tweenzor.cpp">
       <Filter>addons\ofxTweenzor\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\display\RiotStats.cpp">
+      <Filter>src\display</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -1177,6 +1180,9 @@
     </ClInclude>
     <ClInclude Include="src\game\NPCControl.h">
       <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\RiotStats.h">
+      <Filter>src\display</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

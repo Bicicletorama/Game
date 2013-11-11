@@ -17,6 +17,12 @@ void Menu::setup()
     m_stats.width2 = 200;
     m_stats.height2 = 40;
     
+    m_riot.setup();
+    m_riot.x = x1 + 540;
+    m_riot.y = y1;
+    m_riot.width = 200;
+    m_riot.height = 40;
+    
     timerRunning = false;
     displayTimer = "";
     timerCount = 0;
@@ -24,16 +30,15 @@ void Menu::setup()
     startTimer();
 }
 
-void Menu::update(player playerList[TOTAL_PLAYERS])
+void Menu::update(player playerList[TOTAL_PLAYERS], NPCControl aiControl)
 {
     m_stats.update(playerList);
+    m_riot.update(aiControl);
     
     if(timerRunning){
         int timer = ofGetElapsedTimeMillis() - timerCount;
         displayTimer = toTimeCode(timer);
     }
-    
-    //cout << x1 << " - " << y1 << " - " << width1 << " - " << height1 << endl;
 }
 
 void Menu::draw()
@@ -46,9 +51,10 @@ void Menu::draw()
     ofSetColor(255,255,255,255);
     image.draw(x1,y1);
    
-    myFont.drawString(displayTimer, x1+590, y1+32);
+    myFont.drawString(displayTimer, x1+405, y1+32);
    
     m_stats.draw();
+    m_riot.draw();
     
     ofSetColor(255);
     ofPopStyle();

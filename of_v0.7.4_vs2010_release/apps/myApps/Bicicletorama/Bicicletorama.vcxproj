@@ -108,6 +108,7 @@
     <ClCompile Include="src\display\npc\civil.cpp" />
     <ClCompile Include="src\display\npc\cop.cpp" />
     <ClCompile Include="src\display\npc\human.cpp" />
+    <ClCompile Include="src\display\RiotStats.cpp" />
     <ClCompile Include="src\display\VelStats.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\game\PowerChange.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="src\display\npc\civil.h" />
     <ClInclude Include="src\display\npc\cop.h" />
     <ClInclude Include="src\display\npc\human.h" />
+    <ClInclude Include="src\display\RiotStats.h" />
     <ClInclude Include="src\display\VelStats.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\game\GenericData.h" />

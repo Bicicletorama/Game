@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "Configuration.h"
 #include "VelStats.h"
+#include "RiotStats.h"
 #include "ofTrueTypeFont.h"
 
 
@@ -18,7 +19,7 @@ public:
     ofTrueTypeFont myFont;
     
 	void setup();
-    void update(player playerList[TOTAL_PLAYERS]);
+    void update(player playerList[TOTAL_PLAYERS], NPCControl aiControl);
     void draw();
 	
     void startTimer();
@@ -32,6 +33,7 @@ public:
 private:
     
     VelStats   m_stats;
+    RiotStats   m_riot;
 	
 	bool timerRunning;
 	float timerCount;
