@@ -54,8 +54,16 @@ void human::startAtRandomPosition()
     changeState(IDLE);
 }
 
+void human::die() 
+{
+	if(state==LEAVING) return;
+    changeState(DYING);
+}
+
 void human::leave() 
 {
+	if(state==LEAVING) return;
+
 	int margin = 50;
 	float whereToGo = ofRandom(1.0);
 	if(whereToGo>0.75) {
@@ -135,7 +143,9 @@ bool human::hasComplete()
 void human::think(){
 
 	if(ofGetElapsedTimeMillis() - lastTimeIChanged > MIN_CHANGE_TIME){
-		if(state==DYING || state==LEAVING){
+		if(state==DYING){
+			leave();
+		}else if(state==LEAVING){
 			completed = true;
 			return;
 		}

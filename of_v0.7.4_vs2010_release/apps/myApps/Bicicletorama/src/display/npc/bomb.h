@@ -6,6 +6,9 @@
 
 class bomb{
 public:
+	
+	ofEvent<ofVec2f> onExplode;
+
 	void setup(float xIn, float yIn, float xOut, float yOut)
 	{	
 		x = xIn;
@@ -69,5 +72,7 @@ private:
 
 	void onTweenComplete(float* arg) {
 		exploded = true;
+		ofVec2f pos = ofVec2f(x, y);
+		ofNotifyEvent(onExplode, pos);
 	}
 };

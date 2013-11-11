@@ -150,8 +150,18 @@ private:
 	void onCopAttack(attack & a)
 	{
 		bomb * b = new bomb();
+		ofAddListener(b->onExplode, this, &NPCControl::onBombExplode);
 		b->setup(a.startX, a.startY, a.endX, a.endY);
 		bombs.push_back(b);
+	}
+
+	void onBombExplode(ofVec2f & pos)
+	{
+		for (int i=0; i<humans.size(); i++) {
+			if(ofDistSquared(humans[i]->x, humans[i]->y, pos.x, pos.y)<10000){//100px
+				humans[i]->die();
+			}
+		}
 	}
     
 };

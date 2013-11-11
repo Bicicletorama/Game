@@ -33,7 +33,6 @@ public:
     void setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS]);
     void update();
     void draw();
-	void leave();
     
 	//PHYSICS
     ofxBox2dRect        physics;
@@ -43,10 +42,9 @@ public:
 	int type;
 
 	//STATES
-	enum states {IDLE, WALKING, ATTACKING, DYING, LEAVING};
-	int state;
-	void changeState(states _state);
 	bool hasComplete();
+	void die();
+	void leave();
 
 protected:
     
@@ -58,6 +56,9 @@ protected:
 	//STATES
     double lastTimeIChanged;
 	bool completed;
+	enum states {IDLE, WALKING, ATTACKING, DYING, LEAVING};
+	int state;
+	void changeState(states _state);
 
 	//SPRITES
 	ofxSprite *			sprite;
