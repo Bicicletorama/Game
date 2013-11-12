@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Configuration.h"
 #include "ofxOpenCv.h"
 
 
@@ -17,17 +18,7 @@ public:
     
 private:
     
-    vector <ofImage> images;
-    
-    int changeInterval;
-    int lastTime;
-    
-    int margin;
-    
-    ofPoint translate;
-    
-    int curImage;
-    
+	ofVideoPlayer bg;
     ofImage mask;
     
     int border;
