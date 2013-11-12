@@ -85,7 +85,6 @@ void cop::draw()
 
 void cop::doSomething(){
 	closestPlayer = findClosestPlayer(x, y);
-	cout << closestPlayer << endl;
 	if(closestPlayer==-1){
 		//there is nobody close to you, go walk
 		destX = ofRandom(WIDTH/2);

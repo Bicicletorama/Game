@@ -54,6 +54,12 @@ void Game::setup(ofxBox2d * _box2d, Arduino * _arduino)
 
 	//npc
 	aiControl.setup(world, &playerList);
+	ofAddListener(aiControl.onWin, this, &Game::onRiotWin);
+	ofAddListener(aiControl.onLose, this, &Game::onRiotLose);
+	endScreenAlpha = 0;
+	
+	winScreen.loadImage("images/youWin.png");
+	loseScreen.loadImage("images/youLose.png");
 }
 
 //--------------------------------------------------------------
@@ -174,6 +180,12 @@ void Game::draw()
             locked = false;
         }
     }
+
+	//tela de vitoria ou derrota
+	if(endScreenAlpha>0){
+		ofSetColor(255, endScreenAlpha);
+		endScreen->draw(0, 0, WIDTH, HEIGHT);
+	}
 	
     ofPopStyle();
 }
@@ -268,6 +280,44 @@ void Game::startGame()
     canvas.begin();
         ofClear(0, 0, 0);
     canvas.end();
+}
+
+//--------------------------------------------------------------
+void Game::onRiotWin(int & n)
+{
+	showEndScreen(&winScreen);
+}
+
+//--------------------------------------------------------------
+void Game::onRiotLose(int & n)
+{
+	showEndScreen(&loseScreen);
+}
+
+//--------------------------------------------------------------
+void Game::showEndScreen(ofImage * image)
+{
+	aiControl.stop();
+
+	endScreen = image;
+
+	endScreenAlpha = 0;
+	Tweenzor::add(&endScreenAlpha, endScreenAlpha, 255.f, 0.f, 2.f);
+	Tweenzor::addCompleteListener( Tweenzor::getTween(&endScreenAlpha), this, &Game::onShowEndScreenComplete);
+}
+
+//--------------------------------------------------------------
+void Game::onShowEndScreenComplete(float* arg)
+{
+	float delayedCall = 0;
+	Tweenzor::add(&delayedCall, delayedCall, 1.f, 0.f, 6.f);
+	Tweenzor::addCompleteListener( Tweenzor::getTween(&delayedCall), this, &Game::hideEndScreen);
+}
+
+//--------------------------------------------------------------
+void Game::hideEndScreen(float* arg)
+{
+	Tweenzor::add(&endScreenAlpha, endScreenAlpha, 0.f, 0.f, 1.f);
 }
 
 

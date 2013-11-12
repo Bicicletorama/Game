@@ -140,6 +140,11 @@ bool human::hasComplete()
 	return completed;
 }
 
+int human::getState()
+{
+	return state;
+}
+
 void human::think(){
 
 	if(ofGetElapsedTimeMillis() - lastTimeIChanged > MIN_CHANGE_TIME){

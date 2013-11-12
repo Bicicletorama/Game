@@ -42,7 +42,9 @@ public:
 	int type;
 
 	//STATES
+	enum states {IDLE, WALKING, ATTACKING, DYING, LEAVING};
 	bool hasComplete();
+	int getState();
 	void die();
 	void leave();
 
@@ -56,7 +58,6 @@ protected:
 	//STATES
     double lastTimeIChanged;
 	bool completed;
-	enum states {IDLE, WALKING, ATTACKING, DYING, LEAVING};
 	int state;
 	void changeState(states _state);
 

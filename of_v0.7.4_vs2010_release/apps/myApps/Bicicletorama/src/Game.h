@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxBox2d.h"
+#include "ofxTweenzor.h"
 #include "Config.h"
 #include "Arduino.h"
 #include "player.h"
@@ -60,7 +61,16 @@ private:
     
     vector <ofxBox2dCircle>	obstaculos;
 	
-	void onCopAttack(attack & a);
+	void onRiotWin(int & n);
+	void onRiotLose(int & n);
+	void showEndScreen(ofImage * image);
+	void onShowEndScreenComplete(float* arg);
+	void hideEndScreen(float* arg);
+
+	ofImage winScreen;
+	ofImage loseScreen;
+	ofImage * endScreen;
+	float endScreenAlpha;
 	
     PowerChange powerUp;
     PowerChange powerDown;

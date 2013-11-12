@@ -22,6 +22,10 @@ public:
 	NPCStatus copsStatus;
 	NPCStatus civilsStatus;
 
+	
+	ofEvent<int> onWin;
+	ofEvent<int> onLose;
+
 	void setup(b2World * world, player (* playerList)[TOTAL_PLAYERS])
 	{
 		this->playerList = playerList;
@@ -66,12 +70,20 @@ public:
 			}else{
 				if(humans[i]->type==humans[i]->COP){
 					((cop *)humans[i])->update();
-					copsStatus.count++;
+					if(humans[i]->getState()!=humans[i]->LEAVING) copsStatus.count++;
 				}else if(humans[i]->type==humans[i]->CIVIL){
 					((civil *)humans[i])->update();
-					civilsStatus.count++;
+					if(humans[i]->getState()!=humans[i]->LEAVING) civilsStatus.count++;
 				}
 			}
+		}
+
+		if(civilsStatus.count >= civilsStatus.max){
+			int nothing = 0;
+			ofNotifyEvent(onWin, nothing);
+		}else if(copsStatus.count >= copsStatus.max){
+			int nothing = 0;
+			ofNotifyEvent(onLose, nothing);
 		}
 
 		if(enabled){
