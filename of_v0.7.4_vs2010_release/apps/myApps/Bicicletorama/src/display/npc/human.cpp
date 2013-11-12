@@ -115,7 +115,7 @@ void human::changeState(states _state){
             break;	
         case LEAVING:
 			MIN_CHANGE_TIME = 15000;
-			sprite = &spriteWalking;
+			sprite = &spriteLeaving;
             break;	
         case ATTACKING:
 			MIN_CHANGE_TIME = 1000;

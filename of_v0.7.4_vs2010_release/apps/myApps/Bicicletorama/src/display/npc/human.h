@@ -66,6 +66,7 @@ protected:
     ofxSprite           spriteWalking;
     ofxSprite           spriteAttacking;
     ofxSprite           spriteDying;
+    ofxSprite           spriteLeaving;
 
 	//GAME
     player (* playerList)[TOTAL_PLAYERS];

@@ -2,39 +2,47 @@
 
 void civil::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 {
-	/*const char* spritesNames[] = {"blackblock", "careca", "sem_camisa"};
-	int roundIndex = floor(ofRandom(3));
-	string spriteName = spritesNames[roundIndex];*/
-	string spriteName = "sem_camisa";
+	const char* spritesNames[] = {"blackblock", "careca", "sem_camisa", "galego", "menina"};
+	int roundIndex = floor(ofRandom(5));
+	string spriteName = spritesNames[roundIndex];
 
-	spriteIdle.addFile("images/human/mafestante/" + spriteName + "/idle/1.png");
-	spriteIdle.addFile("images/human/mafestante/" + spriteName + "/idle/2.png");
+	spriteIdle.addFile("images/human/manifestante/" + spriteName + "/idle/1.png");
+	spriteIdle.addFile("images/human/manifestante/" + spriteName + "/idle/2.png");
 
-	spriteWalking.addFile("images/human/mafestante/" + spriteName + "/walking/1.png");
-	spriteWalking.addFile("images/human/mafestante/" + spriteName + "/walking/2.png");
-	spriteWalking.addFile("images/human/mafestante/" + spriteName + "/walking/3.png");
-	spriteWalking.addFile("images/human/mafestante/" + spriteName + "/walking/4.png");
-	spriteWalking.addFile("images/human/mafestante/" + spriteName + "/walking/5.png");
-	spriteWalking.addFile("images/human/mafestante/" + spriteName + "/walking/3.png");
+	spriteWalking.addFile("images/human/manifestante/" + spriteName + "/walking/1.png");
+	spriteWalking.addFile("images/human/manifestante/" + spriteName + "/walking/2.png");
+	spriteWalking.addFile("images/human/manifestante/" + spriteName + "/walking/3.png");
+	spriteWalking.addFile("images/human/manifestante/" + spriteName + "/walking/4.png");
+	spriteWalking.addFile("images/human/manifestante/" + spriteName + "/walking/5.png");
+	spriteWalking.addFile("images/human/manifestante/" + spriteName + "/walking/3.png");
 	
-	spriteAttacking.addFile("images/human/mafestante/" + spriteName + "/cartaz/1.png");
-	spriteAttacking.addFile("images/human/mafestante/" + spriteName + "/cartaz/2.png");
-	spriteAttacking.addFile("images/human/mafestante/" + spriteName + "/cartaz/3.png");
-	spriteAttacking.addFile("images/human/mafestante/" + spriteName + "/cartaz/4.png");
-	spriteAttacking.addFile("images/human/mafestante/" + spriteName + "/cartaz/5.png");
+	spriteAttacking.addFile("images/human/manifestante/" + spriteName + "/cartaz/1.png");
+	spriteAttacking.addFile("images/human/manifestante/" + spriteName + "/cartaz/2.png");
+	spriteAttacking.addFile("images/human/manifestante/" + spriteName + "/cartaz/3.png");
+	spriteAttacking.addFile("images/human/manifestante/" + spriteName + "/cartaz/4.png");
+	spriteAttacking.addFile("images/human/manifestante/" + spriteName + "/cartaz/5.png");
 
-	spriteDying.addFile("images/human/mafestante/" + spriteName + "/dying/1.png");
-	spriteDying.addFile("images/human/mafestante/" + spriteName + "/dying/2.png");
+	spriteDying.addFile("images/human/manifestante/" + spriteName + "/dying/1.png");
+	spriteDying.addFile("images/human/manifestante/" + spriteName + "/dying/2.png");
 
+	spriteLeaving.addFile("images/human/manifestante/" + spriteName + "/walking/1.png");
+	spriteLeaving.addFile("images/human/manifestante/" + spriteName + "/walking/2.png");
+	spriteLeaving.addFile("images/human/manifestante/" + spriteName + "/walking/3.png");
+	spriteLeaving.addFile("images/human/manifestante/" + spriteName + "/walking/4.png");
+	spriteLeaving.addFile("images/human/manifestante/" + spriteName + "/walking/5.png");
+	spriteLeaving.addFile("images/human/manifestante/" + spriteName + "/walking/3.png");
+	
 	spriteIdle.setAnchorPercent(0.5, 0.5);
 	spriteWalking.setAnchorPercent(0.5, 0.5);
 	spriteAttacking.setAnchorPercent(0.5, 0.5);
 	spriteDying.setAnchorPercent(0.5, 0.5);
+	spriteLeaving.setAnchorPercent(0.5, 0.5);
 	
 	spriteIdle.play();
 	spriteWalking.play();
 	spriteAttacking.play();
 	spriteDying.play();
+	spriteLeaving.play();
 
 	spriteDying.setLoop(false);
 	
@@ -42,9 +50,10 @@ void civil::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	spriteWalking.setFrameRate(6);
 	spriteAttacking.setFrameRate(6);
 	spriteDying.setFrameRate(2);
+	spriteLeaving.setFrameRate(6);
 	
 	const char* posterImages[] = {"bicicletorama.png", "bicicletorama.png", "bicicletorama.png"};
-	int roundIndex = floor(ofRandom(3));
+	roundIndex = floor(ofRandom(3));
 	string posterImage = posterImages[roundIndex];
 	poster.loadImage("images/cartazes/" + posterImage);
 

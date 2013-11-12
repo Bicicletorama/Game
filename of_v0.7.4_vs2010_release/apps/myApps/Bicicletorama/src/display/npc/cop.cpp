@@ -2,30 +2,39 @@
 
 void cop::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 {
-	spriteIdle.addFile("images/human/civil/idle/1.png");
-	spriteIdle.addFile("images/human/civil/idle/2.png");
+	spriteIdle.addFile("images/human/cop/idle/1.png");
+	spriteIdle.addFile("images/human/cop/idle/2.png");
 
-	spriteWalking.addFile("images/human/civil/walking/1.png");
-	spriteWalking.addFile("images/human/civil/walking/2.png");
-	spriteWalking.addFile("images/human/civil/walking/3.png");
-	spriteWalking.addFile("images/human/civil/walking/4.png");
-	spriteWalking.addFile("images/human/civil/walking/5.png");
-	spriteWalking.addFile("images/human/civil/walking/3.png");
+	spriteWalking.addFile("images/human/cop/walking/1.png");
+	spriteWalking.addFile("images/human/cop/walking/2.png");
+	spriteWalking.addFile("images/human/cop/walking/3.png");
+	spriteWalking.addFile("images/human/cop/walking/4.png");
+	spriteWalking.addFile("images/human/cop/walking/5.png");
+	spriteWalking.addFile("images/human/cop/walking/3.png");
 
-	spriteAttacking.addFile("images/human/civil/shooting/1.png");
+	spriteAttacking.addFile("images/human/cop/attacking/1.png");
 
-	spriteDying.addFile("images/human/civil/dying/1.png");
-	spriteDying.addFile("images/human/civil/dying/2.png");
+	spriteDying.addFile("images/human/cop/dying/1.png");
+	spriteDying.addFile("images/human/cop/dying/2.png");
+
+	spriteLeaving.addFile("images/human/cop/leaving/1.png");
+	spriteLeaving.addFile("images/human/cop/leaving/2.png");
+	spriteLeaving.addFile("images/human/cop/leaving/3.png");
+	spriteLeaving.addFile("images/human/cop/leaving/4.png");
+	spriteLeaving.addFile("images/human/cop/leaving/5.png");
+	spriteLeaving.addFile("images/human/cop/leaving/3.png");
 
 	spriteIdle.setAnchorPercent(0.5, 0.5);
 	spriteWalking.setAnchorPercent(0.5, 0.5);
 	spriteAttacking.setAnchorPercent(0.5, 0.5);
 	spriteDying.setAnchorPercent(0.5, 0.5);
+	spriteLeaving.setAnchorPercent(0.5, 0.5);
 	
 	spriteIdle.play();
 	spriteWalking.play();
 	spriteAttacking.play();
 	spriteDying.play();
+	spriteLeaving.play();
 
 	spriteDying.setLoop(false);
 	
@@ -33,6 +42,7 @@ void cop::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	spriteWalking.setFrameRate(6);
 	spriteAttacking.setFrameRate(2);
 	spriteDying.setFrameRate(2);
+	spriteLeaving.setFrameRate(6);
 	
 	human::setup(b2dworld, playerList);
 	physics.setData(new GenericData("cop", this));
