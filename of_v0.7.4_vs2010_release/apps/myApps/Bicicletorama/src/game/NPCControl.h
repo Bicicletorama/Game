@@ -10,8 +10,7 @@
 struct NPCStatus{
 	float max;
 	int maxPerRound;
-	float initialAccel;
-	float deAccel;
+	float accel;
 	float count;
 	int round;
 	float addInterval;
@@ -40,18 +39,15 @@ public:
 		#endif
 
 		enabled = false;
-
+		
 		copsStatus.max = 30;
 		civilsStatus.max = 60;
 
 		copsStatus.maxPerRound = copsStatus.max * 0.2;
 		civilsStatus.maxPerRound = civilsStatus.max * 0.2;
 
-		copsStatus.initialAccel = 0.5;
-		civilsStatus.initialAccel = 1;
-
-		copsStatus.deAccel = 0.001;
-		civilsStatus.deAccel = 0.001;
+		copsStatus.accel = 1;
+		civilsStatus.accel = 1;
 		
 		copsStatus.addInterval = 15000;
 		civilsStatus.addInterval = 15000;
@@ -146,7 +142,7 @@ public:
 	void addCops()
 	{
 		copsStatus.round++;
-		int totalCops = ofRandom(2) + ((copsStatus.initialAccel - (copsStatus.round * copsStatus.deAccel)) * copsStatus.round);
+		int totalCops = ofRandom(2) + (copsStatus.round * copsStatus.accel);
 		totalCops = min(totalCops, copsStatus.maxPerRound);
 		for(int i=0; i<totalCops; i++) addCop();
 	}
@@ -163,7 +159,7 @@ public:
 	void addCivils()
 	{
 		civilsStatus.round++;
-		int totalCivil = ofRandom(2) + ((civilsStatus.initialAccel - (civilsStatus.round * civilsStatus.deAccel)) * civilsStatus.round);
+		int totalCivil = ofRandom(2) + (civilsStatus.round * civilsStatus.accel);
 		totalCivil = min(totalCivil, civilsStatus.maxPerRound);
 		for(int i=0; i<totalCivil; i++) addCivil();
 	}

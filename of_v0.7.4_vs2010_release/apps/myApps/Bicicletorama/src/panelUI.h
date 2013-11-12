@@ -95,6 +95,16 @@ public:
         gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 0.1, 0.99, 0.7, "FLOOR FRICTION"));
         gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 1.0, 20.0, 10, "MAX IDLE TIME"));
         
+		gui3->addSpacer(0, 20);
+		gui3->addWidgetDown(new ofxUILabel("RIOT", OFX_UI_FONT_MEDIUM)); 
+
+		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 10.0, 100.0, 30.0, "COPS MAX"));
+		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 0.2, 4.0, 1.0, "COPS INCREMENT RATE"));
+		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 1.0, 30.0, 15.0, "COP ADD INTERVAL"));
+		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 10.0, 100.0, 60.0, "CIVIL MAX"));
+		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 0.2, 4.0, 1.0, "CIVIL INCREMENT RATE"));
+		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 1.0, 30.0, 15.0, "CIVIL ADD INTERVAL"));
+        
         ofAddListener(gui3->newGUIEvent,this,&panelUI::guiEvent);
     }
     
@@ -204,6 +214,38 @@ public:
             for(int i=0; i<TOTAL_PLAYERS; i++){
                 m_game->playerList[i].MAX_IDLE_TIME = slider->getScaledValue() * 1000; 
             }
+        }
+        else if(name == "COPS MAX")
+        {
+            ofxUISlider *slider = (ofxUISlider *) e.widget;
+			m_game->aiControl.copsStatus.max = slider->getScaledValue();
+			m_game->aiControl.copsStatus.maxPerRound = slider->getScaledValue() * 0.2;
+        }
+        else if(name == "COPS INCREMENT RATE")
+        {
+            ofxUISlider *slider = (ofxUISlider *) e.widget;
+			m_game->aiControl.copsStatus.addInterval = slider->getScaledValue();
+        }
+        else if(name == "COP ADD INTERVAL")
+        {
+            ofxUISlider *slider = (ofxUISlider *) e.widget;
+			m_game->aiControl.copsStatus.max = slider->getScaledValue() * 1000;
+        }
+        else if(name == "CIVIL MAX")
+        {
+            ofxUISlider *slider = (ofxUISlider *) e.widget; 
+			m_game->aiControl.civilsStatus.max = slider->getScaledValue();
+			m_game->aiControl.civilsStatus.maxPerRound = slider->getScaledValue() * 0.2;
+        }
+        else if(name == "CIVIL INCREMENT RATE")
+        {
+            ofxUISlider *slider = (ofxUISlider *) e.widget;
+			m_game->aiControl.civilsStatus.addInterval = slider->getScaledValue();
+        }
+        else if(name == "CIVIL ADD INTERVAL")
+        {
+            ofxUISlider *slider = (ofxUISlider *) e.widget;
+			m_game->aiControl.civilsStatus.max = slider->getScaledValue() * 1000;
         }
     }
     
