@@ -10,6 +10,9 @@ void RiotStats::setup()
     color[1] = 0x22F960;
     
     for(int i=0; i<2; i++) data[i] = 0;
+	
+	avatar[0].loadImage("images/human/cabecas/3.png");
+	avatar[1].loadImage("images/human/cabecas/2.png");
 }
 
 void RiotStats::update(NPCControl aiControl)
@@ -26,9 +29,16 @@ void RiotStats::draw()
     ofSetColor(0,100);
     ofRect(x, y, width, height);
     
+	float yy, ww;
     for(int i=0; i<2; i++)
     {
+		yy = y+13*i+15;
+		ww = width*data[i];
+
         ofSetHexColor(color[i]);
-		ofRect(x, y+10*i+20, width*data[i], 10);
+		ofRect(x, yy, ww, 10);
+
+		ofSetColor(255);
+		avatar[i].draw(x+ww-5, yy-3);
     }
 }

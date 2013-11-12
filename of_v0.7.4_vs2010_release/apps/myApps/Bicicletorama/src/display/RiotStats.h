@@ -13,16 +13,17 @@ public:
     float x, y;
 	float width;
 	float height;
-	int minMilesecondsInterval;
-	
-	float color[2];
 	
 	void setup();
 	void update(NPCControl aiControl);
 	void draw();
 	
 private:
-    
+
+	int minMilesecondsInterval;
+	
+	float color[2];
+	ofImage avatar[2];
 	float data[2];
 	
 	int lastTime;    
