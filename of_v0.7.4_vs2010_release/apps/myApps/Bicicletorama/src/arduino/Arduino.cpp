@@ -15,7 +15,7 @@ void Arduino::setup()
 void Arduino::update()
 {
     int byte = readByte();
-    while (byte != OF_SERIAL_NO_DATA && byte != OF_SERIAL_ERROR)
+    while (byte != OF_SERIAL_NO_DATA && byte != OF_SERIAL_ERROR && byte != 0)
     {
         switch(byte)
         {
