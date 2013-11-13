@@ -73,7 +73,7 @@ void Menu::stopTimer()
 
 void Menu::keyReleased(int key) 
 {    
-    if (key == 'p') startTimer();
+    if (key == 'p' || key == 'r') startTimer();
 }
 
 string Menu::toTimeCode(double milliseconds) {
