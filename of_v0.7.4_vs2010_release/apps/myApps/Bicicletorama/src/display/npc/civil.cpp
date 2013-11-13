@@ -56,10 +56,7 @@ void civil::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	spriteDying.setFrameRate(2);
 	spriteLeaving.setFrameRate(6);
 	
-	const char* posterImages[] = {"bicicletorama.png", "bicicletorama.png", "bicicletorama.png"};
-	roundIndex = floor(ofRandom(3));
-	string posterImage = posterImages[roundIndex];
-	poster.loadImage("images/cartazes/" + posterImage);
+	poster.loadImage("images/cartazes/" + ofToString(floor(ofRandom(3))+1) + ".png");
 
 	human::setup(b2dworld, playerList);
 	physics.setData(new GenericData("civil", this));
