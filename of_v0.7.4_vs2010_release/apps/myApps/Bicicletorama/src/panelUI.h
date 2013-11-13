@@ -224,12 +224,12 @@ public:
         else if(name == "COPS INCREMENT RATE")
         {
             ofxUISlider *slider = (ofxUISlider *) e.widget;
-			m_game->aiControl.copsStatus.addInterval = slider->getScaledValue();
+			m_game->aiControl.copsStatus.accel = slider->getScaledValue();
         }
         else if(name == "COP ADD INTERVAL")
         {
             ofxUISlider *slider = (ofxUISlider *) e.widget;
-			m_game->aiControl.copsStatus.max = slider->getScaledValue() * 1000;
+			m_game->aiControl.copsStatus.addInterval = slider->getScaledValue() * 1000;
         }
         else if(name == "CIVIL MAX")
         {
@@ -240,12 +240,12 @@ public:
         else if(name == "CIVIL INCREMENT RATE")
         {
             ofxUISlider *slider = (ofxUISlider *) e.widget;
-			m_game->aiControl.civilsStatus.addInterval = slider->getScaledValue();
+			m_game->aiControl.civilsStatus.accel = slider->getScaledValue();
         }
         else if(name == "CIVIL ADD INTERVAL")
         {
             ofxUISlider *slider = (ofxUISlider *) e.widget;
-			m_game->aiControl.civilsStatus.max = slider->getScaledValue() * 1000;
+			m_game->aiControl.civilsStatus.addInterval = slider->getScaledValue() * 1000;
         }
     }
     
