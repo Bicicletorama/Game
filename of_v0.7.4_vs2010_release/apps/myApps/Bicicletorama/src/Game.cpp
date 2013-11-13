@@ -297,7 +297,7 @@ void Game::onRiotLose(int & n)
 //--------------------------------------------------------------
 void Game::showEndScreen(ofImage * image)
 {
-	aiControl.stop();
+	changeState(RACE);
 
 	endScreen = image;
 
