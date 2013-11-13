@@ -31,6 +31,7 @@ public:
     player playerList[TOTAL_PLAYERS];
 
 	NPCControl aiControl;
+	bool knocksCop;
 
 	//STATES
 	enum states {RACE, RIOT};

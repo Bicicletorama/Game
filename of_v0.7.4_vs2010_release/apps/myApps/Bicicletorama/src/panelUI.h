@@ -104,6 +104,7 @@ public:
 		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 10.0, 100.0, 60.0, "CIVIL MAX"));
 		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 0.2, 4.0, 1.0, "CIVIL INCREMENT RATE"));
 		gui3->addWidgetDown(new ofxUISlider(length-xInit,dim, 1.0, 30.0, 15.0, "CIVIL ADD INTERVAL"));
+        gui1->addWidgetDown(new ofxUIToggle( dim, dim, false, "KNOCKOUT COP"));
         
         ofAddListener(gui3->newGUIEvent,this,&panelUI::guiEvent);
     }
@@ -246,6 +247,11 @@ public:
         {
             ofxUISlider *slider = (ofxUISlider *) e.widget;
 			m_game->aiControl.civilsStatus.addInterval = slider->getScaledValue() * 1000;
+        }
+        else if(name == "KNOCKOUT COP")
+        {
+            ofxUIToggle *toggle = (ofxUIToggle *) e.widget; 
+            m_game->knocksCop = toggle->getValue();
         }
     }
     

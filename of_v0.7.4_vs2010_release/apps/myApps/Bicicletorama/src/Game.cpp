@@ -57,6 +57,7 @@ void Game::setup(ofxBox2d * _box2d, Arduino * _arduino)
 	ofAddListener(aiControl.onWin, this, &Game::onRiotWin);
 	ofAddListener(aiControl.onLose, this, &Game::onRiotLose);
 	endScreenAlpha = 0;
+	knocksCop = false;
 	
 	winScreen.loadImage("images/youWin.png");
 	loseScreen.loadImage("images/youLose.png");
@@ -383,7 +384,8 @@ void Game::checkContactStart_cop(b2Fixture * a, b2Fixture * b)  {
 		GenericData * dataB = (GenericData*)b->GetBody()->GetUserData();
 		if (dataB != NULL && (dataB->name == "bike" || dataB->name == "frontWheel" || dataB->name == "rearWheel")) {
 			human * h = (human*)dataA->data;
-			h->die();
+			if(knocksCop) h->die();
+			else h->leave();
 		}
 	}
 }
