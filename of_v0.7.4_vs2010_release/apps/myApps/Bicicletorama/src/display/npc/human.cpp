@@ -113,10 +113,6 @@ void human::changeState(states _state){
 			MIN_CHANGE_TIME = 5000;
 			sprite = &spriteWalking;
             break;	
-        case LEAVING:
-			MIN_CHANGE_TIME = 15000;
-			sprite = &spriteLeaving;
-            break;	
         case ATTACKING:
 			MIN_CHANGE_TIME = 1000;
 			sprite = &spriteAttacking;
@@ -127,9 +123,18 @@ void human::changeState(states _state){
 				a.endY = (*playerList)[closestPlayer].y;
 			ofNotifyEvent(onAttack, a);
             break;	
+        case RISING:
+			MIN_CHANGE_TIME = 1000;
+			sprite = &spriteRising;
+            break;
         case DYING:
+			MIN_CHANGE_TIME = 1500;
 			sprite = &spriteDying;
             break;
+        case LEAVING:
+			MIN_CHANGE_TIME = 15000;
+			sprite = &spriteLeaving;
+            break;	
     }
 
 	lastTimeIChanged = ofGetElapsedTimeMillis();
@@ -149,7 +154,11 @@ void human::think(){
 
 	if(ofGetElapsedTimeMillis() - lastTimeIChanged > MIN_CHANGE_TIME){
 		if(state==DYING){
+			changeState(RISING);
+			return;
+		}else if(state==RISING){
 			leave();
+			return;
 		}else if(state==LEAVING){
 			completed = true;
 			return;

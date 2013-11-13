@@ -17,6 +17,8 @@ void cop::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	spriteDying.addFile("images/human/cop/dying/1.png");
 	spriteDying.addFile("images/human/cop/dying/2.png");
 
+	spriteRising.addFile("images/human/cop/dying/1.png");
+
 	spriteLeaving.addFile("images/human/cop/leaving/1.png");
 	spriteLeaving.addFile("images/human/cop/leaving/2.png");
 	spriteLeaving.addFile("images/human/cop/leaving/3.png");
@@ -28,12 +30,14 @@ void cop::setup(b2World * b2dworld, player (* playerList)[TOTAL_PLAYERS])
 	spriteWalking.setAnchorPercent(0.5, 0.5);
 	spriteAttacking.setAnchorPercent(0.5, 0.5);
 	spriteDying.setAnchorPercent(0.5, 0.5);
+	spriteRising.setAnchorPercent(0.5, 0.5);
 	spriteLeaving.setAnchorPercent(0.5, 0.5);
 	
 	spriteIdle.play();
 	spriteWalking.play();
 	spriteAttacking.play();
 	spriteDying.play();
+	spriteRising.play();
 	spriteLeaving.play();
 
 	spriteDying.setLoop(false);
@@ -56,6 +60,8 @@ void cop::update()
 	switch (state) 
     {
 		case IDLE:
+		case RISING:
+        case DYING:
 			x = physics.getPosition().x;
 			y = physics.getPosition().y;
 			break;
@@ -70,8 +76,6 @@ void cop::update()
 			destY = (*playerList)[closestPlayer].y;
 			updateRotation();
 			physics.body->SetTransform(b2Vec2(b2dNum(x), b2dNum(y)), rotation);
-			break;
-        case DYING:
 			break;
     }
 

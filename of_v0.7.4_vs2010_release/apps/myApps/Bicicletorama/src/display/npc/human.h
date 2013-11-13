@@ -42,7 +42,7 @@ public:
 	int type;
 
 	//STATES
-	enum states {IDLE, WALKING, ATTACKING, DYING, LEAVING};
+	enum states {IDLE, WALKING, ATTACKING, DYING, RISING, LEAVING};
 	bool hasComplete();
 	int getState();
 	void die();
@@ -67,6 +67,7 @@ protected:
     ofxSprite           spriteWalking;
     ofxSprite           spriteAttacking;
     ofxSprite           spriteDying;
+    ofxSprite           spriteRising;
     ofxSprite           spriteLeaving;
 
 	//GAME
