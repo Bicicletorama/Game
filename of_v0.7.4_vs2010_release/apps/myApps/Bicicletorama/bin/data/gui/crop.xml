@@ -1,12 +1,12 @@
 <Widget>
     <Kind>11</Kind>
     <Name>TOP_RIGHT</Name>
-    <XValue>0.000000000</XValue>
-    <YValue>0.000000000</YValue>
+    <XValue>62.186237335</XValue>
+    <YValue>96.000000000</YValue>
 </Widget>
 <Widget>
     <Kind>11</Kind>
     <Name>BOTTOM_LEFT</Name>
-    <XValue>640.000000000</XValue>
-    <YValue>480.000000000</YValue>
+    <XValue>585.587036133</XValue>
+    <YValue>356.000000000</YValue>
 </Widget>
