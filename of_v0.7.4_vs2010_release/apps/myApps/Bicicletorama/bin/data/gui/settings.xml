@@ -6,22 +6,27 @@
 <Widget>
     <Kind>4</Kind>
     <Name>MinBlobArea</Name>
-    <Value>850.111816406</Value>
+    <Value>961.968688965</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Tolerance</Name>
-    <Value>6.845637321</Value>
+    <Value>30.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Sensibility</Name>
-    <Value>3.053691387</Value>
+    <Value>2.973154306</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Angle</Name>
+    <Value>9.966443062</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>SHOW MINI KINECT</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -31,5 +36,10 @@
 <Widget>
     <Kind>2</Kind>
     <Name>SHOW CONTOUR</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>KNOCKOUT COP</Name>
     <Value>0</Value>
 </Widget>
