@@ -39,7 +39,11 @@ public:
 	int MIN_BLOB_AREA;
     int TOLERANCE; //millimeter of invisible outline from any object found by kinect
     int SENSIBILITY; //number of frames readed with success to detect a real object by kinect
-		
+	
+	int HARDCODE_NEAR;
+	int FAR_BOTTOM;
+	int FAR_TOP;
+
 	ofxKinectNui kinect;
 	bool bPlugged;
 
@@ -48,9 +52,10 @@ private:
     
     ofxCvGrayscaleImage	scaledImage;
 	ofxCvGrayscaleImage depthImage;
+	ofxCvGrayscaleImage pbImage;
 	ofxCvGrayscaleImage thresholdedImage;
     
-    ofPixels backgroundPixels;
+    ofShortPixels backgroundPixels;
     ofPixels lifePixels;
     
     

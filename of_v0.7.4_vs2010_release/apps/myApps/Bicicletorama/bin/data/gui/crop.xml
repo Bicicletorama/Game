@@ -1,12 +1,22 @@
 <Widget>
     <Kind>11</Kind>
     <Name>TOP_RIGHT</Name>
-    <XValue>62.186237335</XValue>
-    <YValue>96.000000000</YValue>
+    <XValue>150.283401489</XValue>
+    <YValue>76.000000000</YValue>
 </Widget>
 <Widget>
     <Kind>11</Kind>
     <Name>BOTTOM_LEFT</Name>
-    <XValue>585.587036133</XValue>
-    <YValue>356.000000000</YValue>
+    <XValue>538.947387695</XValue>
+    <YValue>368.000000000</YValue>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>FAR BOTTOM</Name>
+    <Value>3052.145751953</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>FAR TOP</Name>
+    <Value>3717.085205078</Value>
 </Widget>

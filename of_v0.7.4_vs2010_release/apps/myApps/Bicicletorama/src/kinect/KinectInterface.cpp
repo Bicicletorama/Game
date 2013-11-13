@@ -11,6 +11,10 @@ void KinectInterface::setup(b2World * _world)
     MIN_BLOB_AREA = 0;    
     TOLERANCE = 5;
     SENSIBILITY = 2;
+
+	HARDCODE_NEAR = 2000;
+	FAR_BOTTOM = 4000;
+	FAR_TOP = 4000;
     
 	
 	quadCropCorners.reserve(4);
@@ -44,6 +48,7 @@ void KinectInterface::setup(b2World * _world)
     captureCount = 0;
     
 	depthImage.allocate(KINECT_WIDTH, KINECT_HEIGHT);
+	pbImage.allocate(KINECT_WIDTH, KINECT_HEIGHT);
 	thresholdedImage.allocate(KINECT_WIDTH, KINECT_HEIGHT);
     updateROI(0, 0, WIDTH, HEIGHT);
     
@@ -73,11 +78,11 @@ void KinectInterface::update()
         
         // capturing and saving kinect
         
-		ofPixels kinectRawDepthPixels = kinect.getDepthPixels();
+		ofShortPixels kinectRawDepthPixels = kinect.getDistancePixels();
         
         for (int i = 0; i < kinectNumPixels; i++)
         {
-            if (kinectRawDepthPixels[i] > 0 && kinectRawDepthPixels[i] < backgroundPixels[i]-TOLERANCE) {
+            if (kinectRawDepthPixels[i] > HARDCODE_NEAR && kinectRawDepthPixels[i] < backgroundPixels[i]-TOLERANCE) {
                 if (lifePixels[i] < SENSIBILITY) {
                     lifePixels[i]++;
                 }
@@ -90,21 +95,24 @@ void KinectInterface::update()
         
         
         // gray image
-        unsigned char * grayPixels = depthImage.getPixels();
+
+		pbImage.set(0);
+        unsigned char * pbPixels = pbImage.getPixels();
         for (int i = 0; i < kinectNumPixels; i++)
         {
             if (lifePixels[i] >= SENSIBILITY) {
-                grayPixels[i] = 255;
+                pbPixels[i] = 255;
             } else {
-                grayPixels[i] = 0;
+                pbPixels[i] = 0;
             }
         }
-		depthImage.flagImageChanged();
+		pbImage.flagImageChanged();
         
         
-		thresholdedImage.setFromPixels(depthImage.getRoiPixels(), depthImage.getROI().width, depthImage.getROI().height);
+		thresholdedImage.setFromPixels(pbImage.getRoiPixels(), pbImage.getROI().width, pbImage.getROI().height);
         thresholdedImage.blur(BLUR_AMOUNT);
         thresholdedImage.threshold(30);
+		thresholdedImage.mirror(true, false); //flip hardcode image
         
         
         // find contours
@@ -162,7 +170,8 @@ void KinectInterface::draw()
         ofSetColor(255);
     }
 	if (showKinect) {
-		depthImage.draw(400, 500, 200, 150);
+		depthImage.draw(190, 500, 200, 150);
+		pbImage.draw(400, 500, 200, 150);
         thresholdedImage.draw(610, 500, 200, 150);
         contourFinder.draw(610, 500, 200, 150);
     }
@@ -181,6 +190,7 @@ void KinectInterface::keyPressed(int key)
 void KinectInterface::updateROI(int x, int y, int w, int h)
 {
     depthImage.setROI(x, y, w, h);
+	pbImage.setROI(x, y, w, h);
 }
 
 void KinectInterface::setAngle(int _angle)
@@ -198,17 +208,23 @@ void KinectInterface::captureBackground(bool clearBackground = false)
     if (clearBackground) {
         captureCount = 60;
 		backgroundPixels.set(kinect.getFarClippingDistance());
-    }
 
-							//getRawDepthPixels
-    ofPixels pixels = kinect.getDepthPixels();
+		//a base do background é a interpolação, depois ele faz o mapeamento em cima
+		for (int i = 0; i < KINECT_HEIGHT; i++)
+		{
+			float valueY = ofMap(i, 0, KINECT_HEIGHT-1, FAR_TOP, FAR_BOTTOM);
+			for (int j = 0; j < KINECT_WIDTH; j++) {
+				backgroundPixels[ (i*KINECT_WIDTH) + j ] = valueY;
+			}
+		}
+    }
+	
+    ofShortPixels pixels = kinect.getDistancePixels();
     for (int i = 0; i < kinectNumPixels; i++)
     {
-        if (pixels[i] == 0) {
-								//getFarClipping
-            pixels[i] = kinect.getFarClippingDistance();
+        if (pixels[i] > HARDCODE_NEAR) {
+			backgroundPixels[i] = min(backgroundPixels[i], pixels[i]);
         }
-        backgroundPixels[i] = min(backgroundPixels[i], pixels[i]);
     }
 }
 

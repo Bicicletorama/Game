@@ -78,7 +78,12 @@ public:
         gui2->addWidgetDown(new ofxUI2DPad(length-xInit,120, ofPoint(0,640),  ofPoint(0,480), ofPoint(m_kinect->quadCropCorners[0].x, m_kinect->quadCropCorners[0].y), "TOP_RIGHT"));
         gui2->addWidgetDown(new ofxUI2DPad(length-xInit,120, ofPoint(0,640),  ofPoint(0,480), ofPoint(m_kinect->quadCropCorners[3].x, m_kinect->quadCropCorners[3].y), "BOTTOM_LEFT"));
         
-        ofAddListener(gui2->newGUIEvent,this,&panelUI::guiEvent);
+		gui2->addSpacer(0, 20);
+		gui2->addWidgetDown(new ofxUILabel("INTERPOLATION", OFX_UI_FONT_MEDIUM)); 
+		gui2->addWidgetDown(new ofxUISlider(length-xInit,dim, 0.0, 4000.0, 4000.0, "FAR BOTTOM"));
+		gui2->addWidgetDown(new ofxUISlider(length-xInit,dim, 0.0, 4000.0, 4000.0, "FAR TOP"));
+        
+		ofAddListener(gui2->newGUIEvent,this,&panelUI::guiEvent);
     }
     
     
@@ -192,6 +197,20 @@ public:
             int h = pad2->getScaledValue().y - pad->getScaledValue().y;
             
             m_kinect->updateROI(x, y, w, h);
+        }
+        else if(name == "FAR TOP")
+        {
+            ofxUISlider *slider = (ofxUISlider *) e.widget; 
+            
+			m_kinect->FAR_TOP = slider->getScaledValue();
+			m_kinect->captureBackground(true);
+        }
+        else if(name == "FAR BOTTOM")
+        {
+            ofxUISlider *slider = (ofxUISlider *) e.widget; 
+            
+			m_kinect->FAR_BOTTOM = slider->getScaledValue();
+			m_kinect->captureBackground(true);
         }
         else if(name == "HORSE POWERS")
         {
