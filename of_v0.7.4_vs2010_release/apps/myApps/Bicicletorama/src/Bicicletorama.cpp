@@ -36,7 +36,7 @@ void Bicicletorama::update()
 	Tweenzor::update( ofGetElapsedTimeMillis() );
     game.update();
     borda.update();
-    menu.update(game.playerList);
+    menu.update(game.playerList, game.aiControl);
     box2d.update();
 }
 
