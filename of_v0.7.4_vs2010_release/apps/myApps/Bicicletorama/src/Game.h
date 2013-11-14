@@ -52,6 +52,7 @@ private:
     int     lastGameTimer;
     
     bool locked;
+	float delayedCall;
     
     ofImage background;
     ofFbo canvas;   

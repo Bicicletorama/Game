@@ -310,7 +310,7 @@ void Game::showEndScreen(ofImage * image)
 //--------------------------------------------------------------
 void Game::onShowEndScreenComplete(float* arg)
 {
-	float delayedCall = 0;
+	delayedCall = 0;
 	Tweenzor::add(&delayedCall, delayedCall, 1.f, 0.f, 6.f);
 	Tweenzor::addCompleteListener( Tweenzor::getTween(&delayedCall), this, &Game::hideEndScreen);
 }
