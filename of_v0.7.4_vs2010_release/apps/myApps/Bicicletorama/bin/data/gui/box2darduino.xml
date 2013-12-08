@@ -16,27 +16,27 @@
 <Widget>
     <Kind>4</Kind>
     <Name>COPS MAX</Name>
-    <Value>30.000000000</Value>
+    <Value>20.745317459</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>COPS INCREMENT RATE</Name>
-    <Value>1.000000000</Value>
+    <Value>2.080461740</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>COP ADD INTERVAL</Name>
-    <Value>15.000000000</Value>
+    <Value>10.979757309</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>CIVIL MAX</Name>
-    <Value>60.000003815</Value>
+    <Value>20.956678391</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>CIVIL INCREMENT RATE</Name>
-    <Value>1.000000000</Value>
+    <Value>1.015384674</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
