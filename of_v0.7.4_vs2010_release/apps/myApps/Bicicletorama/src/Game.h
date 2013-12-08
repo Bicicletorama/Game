@@ -39,7 +39,6 @@ public:
 	void toggleState();
 	void changeState(states state);
     
-    float delayedCall;
 
 private:
     
