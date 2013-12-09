@@ -13,7 +13,7 @@
 #include "ofxBox2d.h"
 #include "ofxTweenzor.h"
 #include "Configuration.h"
-#include "Arduino.h"
+#include "bikeHub.h"
 #include "game.h"
 #include "Borda.h"
 #include "Menu.h"
@@ -41,7 +41,7 @@ private:
     
     ofxBox2d			box2d;
     
-    Arduino				arduino;
+    bikeHub				m_bikeHub;
     KinectInterface		kinect;
     Game				game;
     Menu				menu;

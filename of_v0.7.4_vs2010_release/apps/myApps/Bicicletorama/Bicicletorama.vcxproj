@@ -101,7 +101,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\addons\ofxTweenzor\src\Tween.cpp" />
     <ClCompile Include="..\..\..\addons\ofxTweenzor\src\Tweenzor.cpp" />
-    <ClCompile Include="src\arduino\Arduino.cpp" />
+    <ClCompile Include="src\arduino\bikeHub.cpp" />
     <ClCompile Include="src\Bicicletorama.cpp" />
     <ClCompile Include="src\display\Borda.cpp" />
     <ClCompile Include="src\display\Menu.cpp" />
@@ -196,7 +196,7 @@
     <ClInclude Include="..\..\..\addons\ofxTweenzor\src\TweenFunctions.h" />
     <ClInclude Include="..\..\..\addons\ofxTweenzor\src\TweenSelector.h" />
     <ClInclude Include="..\..\..\addons\ofxTweenzor\src\Tweenzor.h" />
-    <ClInclude Include="src\arduino\Arduino.h" />
+    <ClInclude Include="src\arduino\bikeHub.h" />
     <ClInclude Include="src\Bicicletorama.h" />
     <ClInclude Include="src\Configuration.h" />
     <ClInclude Include="src\display\Borda.h" />

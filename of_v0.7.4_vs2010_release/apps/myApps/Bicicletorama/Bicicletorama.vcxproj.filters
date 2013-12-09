@@ -241,9 +241,6 @@
     <ClCompile Include="src\display\Borda.cpp">
       <Filter>src\display</Filter>
     </ClCompile>
-    <ClCompile Include="src\arduino\Arduino.cpp">
-      <Filter>src\arduino</Filter>
-    </ClCompile>
     <ClCompile Include="src\kinect\KinectInterface.cpp">
       <Filter>src\kinect</Filter>
     </ClCompile>
@@ -267,6 +264,9 @@
     </ClCompile>
     <ClCompile Include="src\display\RiotStats.cpp">
       <Filter>src\display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\arduino\bikeHub.cpp">
+      <Filter>src\arduino</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1136,9 +1136,6 @@
     <ClInclude Include="src\display\Borda.h">
       <Filter>src\display</Filter>
     </ClInclude>
-    <ClInclude Include="src\arduino\Arduino.h">
-      <Filter>src\arduino</Filter>
-    </ClInclude>
     <ClInclude Include="src\kinect\KinectInterface.h">
       <Filter>src\kinect</Filter>
     </ClInclude>
@@ -1183,6 +1180,9 @@
     </ClInclude>
     <ClInclude Include="src\display\RiotStats.h">
       <Filter>src\display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\arduino\bikeHub.h">
+      <Filter>src\arduino</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

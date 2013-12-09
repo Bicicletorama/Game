@@ -2,11 +2,11 @@
 
 
 //--------------------------------------------------------------
-void Game::setup(ofxBox2d * _box2d, Arduino * _arduino)
+void Game::setup(ofxBox2d * _box2d, bikeHub * _bikeHub)
 {
     box2d = _box2d;
 	world = box2d->getWorld();
-    arduino = _arduino;
+    m_bikeHub = _bikeHub;
 
     // register the listener so that we get the events
     ofAddListener(box2d->contactStartEvents, this, &Game::contactStart);
@@ -94,13 +94,9 @@ void Game::update()
         //players
         for (int i = 0; i < TOTAL_PLAYERS; i++) {
             
-			if(arduino->connected){
-				int totalImpulses = arduino->getImpulse(i);
-				for (int j = 0; j < totalImpulses; j++) {
-					playerList[i].applyImpulse();
-				}
-            
-				playerList[i].setDirection( arduino->getDirection(i) );
+			if (m_bikeHub->isBikeConnected(i)) {
+				playerList[i].applyImpulse( m_bikeHub->getBikeImpulse(i) );
+            	playerList[i].setDirection( m_bikeHub->getBikeDirection(i) );
 			}
             
             playerList[i].update();

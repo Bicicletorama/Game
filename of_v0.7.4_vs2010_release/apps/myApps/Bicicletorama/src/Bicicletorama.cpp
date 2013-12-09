@@ -19,9 +19,9 @@ void Bicicletorama::setup()
     
     sound::setup();
     
-    arduino.setup();
+    m_bikeHub.setup();
     kinect.setup(box2d.getWorld());
-    game.setup(&box2d, &arduino);
+    game.setup(&box2d, &m_bikeHub);
     borda.setup(&kinect.contourFinder);
     menu.setup();
     m_panel.setup(&kinect, &game);
@@ -31,7 +31,7 @@ void Bicicletorama::setup()
 //--------------------------------------------------------------
 void Bicicletorama::update()
 {
-    arduino.update();
+    m_bikeHub.update();
     kinect.update();
 	Tweenzor::update( ofGetElapsedTimeMillis() );
     game.update();
@@ -89,7 +89,6 @@ void Bicicletorama::resized(int w, int h) {}
 //--------------------------------------------------------------
 void Bicicletorama::exit()
 {
-    arduino.close();
     kinect.exit();
 	Tweenzor::destroy();
 }

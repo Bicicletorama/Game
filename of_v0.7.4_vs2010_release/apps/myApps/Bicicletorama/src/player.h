@@ -33,7 +33,7 @@ public:
     
     void setDirectionIncrement(float increment);
     void setDirection(float value);
-    void applyImpulse();
+    void applyImpulse(int amount = 1);
     
     float getVelocity();
 

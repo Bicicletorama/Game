@@ -156,18 +156,18 @@ void player::setDirection(float value)
     directionAngle = value;
 }
 
-void player::applyImpulse()
+void player::applyImpulse(int amount)
 {
     if (idle) {
         wakeUp();
     }
     
     bike.body->SetAwake(true);
-    engineSpeed += -HORSEPOWERS;
+    engineSpeed += -HORSEPOWERS*amount;
     
     lastImpulseTime = ofGetElapsedTimeMillis();
     
-    spriteBike.nextFrame();
+    spriteBike.setCurrentFrame(spriteBike.getCurrentFrame()+amount);
 }
 
 void player::addPowerChange(float value)

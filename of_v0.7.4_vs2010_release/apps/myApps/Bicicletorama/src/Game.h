@@ -4,7 +4,7 @@
 #include "ofxBox2d.h"
 #include "ofxTweenzor.h"
 #include "Config.h"
-#include "Arduino.h"
+#include "bikeHub.h"
 #include "player.h"
 #include "human.h"
 #include "cop.h"
@@ -20,7 +20,7 @@ class Game {
     
 public:
     
-    void setup(ofxBox2d * _box2d, Arduino * _arduino);
+    void setup(ofxBox2d * _box2d, bikeHub * _bikeHub);
     void update();
     void draw();
     
@@ -44,7 +44,7 @@ private:
     
 	ofxBox2d * box2d;
     b2World * world;
-    Arduino * arduino;
+    bikeHub * m_bikeHub;
     
     void    startGame();
     int     startGameMillis;
