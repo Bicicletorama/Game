@@ -69,7 +69,12 @@ void Game::update()
                 playerList[i].applyImpulse();
             }
             
-            playerList[i].setDirection( arduino->getDirection(i) );
+            playerList[i].setDirectionIncrement(arduino->getDirection(i));
+         
+            if (arduino->getClk(i) == 1)
+            {
+                playerList[i].setDirection(0);
+            }
             
             playerList[i].update();
         }
@@ -144,7 +149,7 @@ void Game::draw()
 }
 
 //--------------------------------------------------------------
-void Game::keyReleased(int key) 
+void Game::keyReleased(int key)
 {    
     if (key == 'p') startGame();
     

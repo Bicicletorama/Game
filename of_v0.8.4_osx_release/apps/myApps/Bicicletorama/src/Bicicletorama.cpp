@@ -51,14 +51,14 @@ void Bicicletorama::keyPressed(int key)
 {   
     kinect.keyPressed(key);
     m_panel.keyPressed(key);
-	
+    
 	if (key == 'f') ofToggleFullscreen();
 }
 
 
 //--------------------------------------------------------------
 void Bicicletorama::keyReleased(int key) 
-{   
+{
     game.keyReleased(key);
     menu.keyReleased(key);
 }

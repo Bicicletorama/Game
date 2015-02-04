@@ -19,7 +19,7 @@ void Arduino::update()
                 if (buffer != "")
                 {
                     vector<string> data = ofSplitString(buffer, " ");
-                    if (data.size() >= 8)
+                    if (data.size() >= 12)
                     {
                         impulse[0] += ofToInt(data[0]);
                         impulse[1] += ofToInt(data[1]);
@@ -30,6 +30,11 @@ void Arduino::update()
                         direction[1] = ofToFloat(data[5]);
                         direction[2] = ofToFloat(data[6]);
                         direction[3] = ofToFloat(data[7]);
+                        
+                        clk[0] = ofToFloat(data[8]);
+                        clk[1] = ofToFloat(data[9]);
+                        clk[2] = ofToFloat(data[10]);
+                        clk[3] = ofToFloat(data[11]);
                     }
                     buffer = "";
                 }
@@ -54,5 +59,9 @@ float Arduino::getDirection(int playerID)
     return direction[playerID];
 }
 
+float Arduino::getClk(int playerId)
+{
+    return clk[playerId];
+}
 
 

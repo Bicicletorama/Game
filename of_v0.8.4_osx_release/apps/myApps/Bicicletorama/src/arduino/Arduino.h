@@ -14,6 +14,7 @@ public:
     
     int getImpulse(int playerID);
     float getDirection(int playerID);
+    float getClk(int playerID);
     
     
 private:
@@ -22,7 +23,7 @@ private:
     
     int impulse[TOTAL_PLAYERS];
     float direction[TOTAL_PLAYERS];
-
+    int clk[TOTAL_PLAYERS];
 		
 };
 
